@@ -109,7 +109,7 @@ const Navbar1 = ({
           <div className="flex items-center gap-6">
             <a href="#home" onClick={(e) => { e.preventDefault(); handleItemClick('/', 'home'); }} className="flex items-center gap-2">
               <img src={logo.src} className="w-8 h-8 rounded-full" alt={logo.alt} />
-              <span className="text-lg font-semibold text-oritech-red">{logo.title}</span>
+              <span className="text-lg font-semibold text-black">{logo.title}</span>
             </a>
             <div className="flex items-center">
               <NavigationMenu>
@@ -119,7 +119,7 @@ const Navbar1 = ({
                     return (
                       <NavigationMenuItem key={item.title}>
                         <a
-                          className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-oritech-red' : 'text-white hover:text-oritech-red'}`}
+                          className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-black font-bold' : 'text-black hover:text-gray-600'}`}
                           href={`#${item.sectionId}`}
                           onClick={(e) => { 
                             e.preventDefault(); 
@@ -137,7 +137,7 @@ const Navbar1 = ({
             </div>
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm" className="border-white text-white hover:bg-oritech-red hover:text-white hover:border-oritech-red">
+            <Button asChild variant="outline" size="sm" className="border-black text-black hover:bg-gray-100">
               <a 
                 href={`#${auth.login.sectionId}`}
                 onClick={(e) => { 
@@ -148,7 +148,7 @@ const Navbar1 = ({
                 {auth.login.text}
               </a>
             </Button>
-            <Button asChild size="sm" className="bg-oritech-red hover:bg-oritech-red/90 text-white">
+            <Button asChild size="sm" className="bg-black hover:bg-gray-800 text-white">
               <a 
                 href={`#${auth.signup.sectionId}`}
                 onClick={(e) => { 
@@ -169,15 +169,15 @@ const Navbar1 = ({
               className="flex items-center gap-2"
             >
               <img src={logo.src} className="w-8 h-8 rounded-full" alt={logo.alt} />
-              <span className="text-lg font-semibold text-oritech-red">{logo.title}</span>
+              <span className="text-lg font-semibold text-black">{logo.title}</span>
             </a>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="border-white text-white">
+                <Button variant="outline" size="icon" className="border-black text-black">
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="overflow-y-auto bg-oritech-bg border-oritech-gray/50 z-[9999]">
+              <SheetContent className="overflow-y-auto bg-white border-black/20 z-[9999]">
                 <SheetHeader>
                   <SheetTitle>
                     <a 
@@ -186,7 +186,7 @@ const Navbar1 = ({
                       className="flex items-center gap-2"
                     >
                       <img src={logo.src} className="w-8 h-8 rounded-full" alt={logo.alt} />
-                      <span className="text-lg font-semibold text-oritech-red">{logo.title}</span>
+                      <span className="text-lg font-semibold text-black">{logo.title}</span>
                     </a>
                   </SheetTitle>
                 </SheetHeader>
@@ -202,7 +202,7 @@ const Navbar1 = ({
                             e.preventDefault(); 
                             handleItemClick(item.url, item.sectionId); 
                           }}
-                          className={`flex items-center font-semibold ${isActive ? 'text-oritech-red' : 'text-white hover:text-oritech-red'}`}
+                          className={`flex items-center font-semibold ${isActive ? 'text-black font-bold' : 'text-black hover:text-gray-600'}`}
                         >
                           {item.icon && <span className="mr-3">{item.icon}</span>}
                           {item.title}
@@ -210,12 +210,12 @@ const Navbar1 = ({
                       );
                     })}
                   </div>
-                  <div className="border-t border-oritech-gray/50 py-4">
+                  <div className="border-t border-black/20 py-4">
                     <div className="grid grid-cols-2 justify-start">
                       {mobileExtraLinks.map((link, idx) => (
                         <a
                           key={idx}
-                          className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-oritech-red"
+                          className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-black transition-colors hover:text-gray-600"
                           href={`#${link.sectionId}`}
                           onClick={(e) => { 
                             e.preventDefault(); 
@@ -228,7 +228,7 @@ const Navbar1 = ({
                     </div>
                   </div>
                   <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline" className="border-white text-white hover:bg-oritech-red hover:text-white hover:border-oritech-red">
+                    <Button asChild variant="outline" className="border-black text-black hover:bg-gray-100">
                       <a 
                         href={`#${auth.login.sectionId}`}
                         onClick={(e) => { 
@@ -239,7 +239,7 @@ const Navbar1 = ({
                         {auth.login.text}
                       </a>
                     </Button>
-                    <Button asChild className="bg-oritech-red hover:bg-oritech-red/90 text-white">
+                    <Button asChild className="bg-black hover:bg-gray-800 text-white">
                       <a 
                         href={`#${auth.signup.sectionId}`}
                         onClick={(e) => { 

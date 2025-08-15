@@ -79,15 +79,15 @@ const Consultation = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-8 user-select-text">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-poppins">Book Your Free AI Consultation</h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto font-poppins">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 font-poppins">Book Your Free AI Consultation</h2>
+          <p className="text-lg text-black max-w-3xl mx-auto font-poppins">
             Ready to discover how AI can transform your business? Schedule a free consultation with our AI experts to discuss your specific needs and get a custom roadmap for implementation.
           </p>
         </motion.div>
         
         {/* Calendar Component with error boundary */}
         <motion.div variants={itemVariants} className="mb-12 relative z-20">
-          <div className="bg-oritech-gray/30 backdrop-blur-sm p-6 rounded-lg border border-oritech-gray/50" style={{ height: "750px" }}>
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 shadow-lg" style={{ height: "750px" }}>
             <ErrorBoundary>
               <CalendarBooking />
             </ErrorBoundary>
