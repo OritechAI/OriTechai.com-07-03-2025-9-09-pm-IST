@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useEffect, useLayoutEffect, useMemo, useState, useRef } from "react"
+import { memo, useEffect, useLayoutEffect, useState, useRef } from "react"
 import {
   AnimatePresence,
   motion,
@@ -91,7 +91,7 @@ const Carousel = memo(
     const isScreenSizeSm = useMediaQuery("(max-width: 640px)")
     const isScreenSizeMd = useMediaQuery("(max-width: 1024px)")
     
-    // Adjust cylinder width based on screen size
+    // Adjust cylinder width based on screen size  
     const cylinderWidth = isScreenSizeSm ? 1100 : isScreenSizeMd ? 1800 : 2200
     const faceCount = carouselImages.length
     const faceWidth = cylinderWidth / faceCount
