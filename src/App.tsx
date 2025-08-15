@@ -198,7 +198,7 @@ function App() {
                     onClick={(e) => { e.preventDefault(); scrollToSection('booking'); }}
                   >
                     Book Free Audit
-                    Book Now
+                  </a>
                 </li>
               </ul>
             </nav>
