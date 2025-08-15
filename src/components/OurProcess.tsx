@@ -85,7 +85,7 @@ const OurProcess = () => {
               className="card-dark p-8 rounded-lg hover:bg-white/20 transition-all duration-300 text-center shadow-lg"
             >
               {/* Step Number */}
-              <div className="text-4xl font-bold text-gold-emphasis mb-4 font-poppins user-select-text">
+              <div className="text-4xl font-bold text-red-emphasis mb-4 font-poppins user-select-text">
                 {step.step}
               </div>
               

@@ -66,7 +66,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mb-16">
-          <p className="text-lg max-w-2xl mx-auto font-poppins user-select-text italic" style={{ color: '#F2F2F2' }}>
+          <p className="text-lg max-w-2xl mx-auto font-poppins user-select-text italic text-red-emphasis">
             In just 30 minutes, we'll map your biggest AI wins — no fluff, no jargon, just actionable insights.
           </p>
         </motion.div>

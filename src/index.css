@@ -114,12 +114,12 @@ body {
   color: var(--primary-red);
 }
 
-.text-gold-emphasis {
-  color: var(--gold-accent);
+.text-red-emphasis {
+  color: var(--primary-red);
 }
 
 .text-success {
-  color: var(--success-green);
+  color: var(--primary-red);
 }
 
 /* Card styles */
@@ -207,12 +207,12 @@ body {
 
 /* Metrics styling */
 .metric-positive {
-  color: var(--success-green);
+  color: var(--primary-red);
   font-weight: bold;
 }
 
 .metric-highlight {
-  color: var(--gold-accent);
+  color: var(--primary-red);
   font-weight: bold;
 }
 

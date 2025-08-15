@@ -117,7 +117,7 @@ const Consultation = () => {
 
         {/* Final CTA */}
         <motion.div variants={itemVariants} className="text-center">
-          <p className="text-lg text-gold-emphasis font-poppins user-select-text font-semibold">
+          <p className="text-lg text-red-emphasis font-poppins user-select-text font-semibold">
             Ready to transform your business with AI? Book your call now!
           </p>
         </motion.div>

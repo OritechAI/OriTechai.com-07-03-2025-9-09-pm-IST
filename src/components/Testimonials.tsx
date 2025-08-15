@@ -62,11 +62,11 @@ const Testimonials = () => {
           {/* Results Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="bg-white p-4 rounded-lg border border-gray-200 text-center shadow">
-              <div className="text-3xl font-bold metric-positive mb-2 font-poppins user-select-text">30%</div>
+              <div className="text-3xl font-bold text-red-emphasis mb-2 font-poppins user-select-text">30%</div>
               <p className="font-poppins user-select-text">Reduction in Manual Hours</p>
             </div>
             <div className="bg-white p-4 rounded-lg border border-gray-200 text-center shadow">
-              <div className="text-3xl font-bold metric-positive mb-2 font-poppins user-select-text">18%</div>
+              <div className="text-3xl font-bold text-red-emphasis mb-2 font-poppins user-select-text">18%</div>
               <p className="font-poppins user-select-text">Increase in Lead Conversion</p>
             </div>
           </div>

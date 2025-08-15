@@ -87,7 +87,7 @@ const WhatWeDo = () => {
         </div>
 
         <motion.div variants={itemVariants} className="text-center">
-          <p className="text-xl text-gold-emphasis mb-6 font-poppins user-select-text font-semibold">
+          <p className="text-xl text-red-emphasis mb-6 font-poppins user-select-text font-semibold">
             Stop guessing. Start automating.
           </p>
           <motion.button
