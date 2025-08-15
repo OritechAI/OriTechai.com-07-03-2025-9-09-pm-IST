@@ -38,42 +38,24 @@ const WhatWeDo = () => {
 
   const services = [
     {
-      icon: <Search className="h-12 w-12 text-oritech-red" />,
-      title: "AI Business Audits",
-      description: "Comprehensive analysis of your current processes to identify automation opportunities and inefficiencies.",
-      benefits: [
-        "Process mapping and bottleneck identification",
-        "ROI analysis for AI implementation",
-        "Custom automation roadmap",
-        "Cost-benefit analysis and timeline"
-      ]
+      icon: <Search className="h-12 w-12 text-black" />,
+      title: "AI Process Audits",
+      description: "We analyze your current operations to find the exact tasks and workflows AI can handle for you."
     },
     {
-      icon: <PlaneTakeoff className="h-12 w-12 text-oritech-red" />,
+      icon: <PlaneTakeoff className="h-12 w-12 text-black" />,
       title: "AI Strategy Consulting",
-      description: "Strategic planning to align AI initiatives with your business goals and maximize return on investment.",
-      benefits: [
-        "AI readiness assessment",
-        "Technology stack recommendations",
-        "Implementation priority matrix",
-        "Change management strategy"
-      ]
+      description: "We create a custom roadmap to implement AI solutions that fit your business — not cookie-cutter templates."
     },
     {
-      icon: <Cog className="h-12 w-12 text-oritech-red" />,
-      title: "AI Implementation",
-      description: "End-to-end implementation of AI solutions including chatbots, voice agents, and workflow automation.",
-      benefits: [
-        "Custom AI chatbot development",
-        "Voice agent implementation",
-        "Workflow automation setup",
-        "Integration with existing systems"
-      ]
+      icon: <Cog className="h-12 w-12 text-black" />,
+      title: "AI Implementation & Training",
+      description: "We build, integrate, and train your team so your automations actually get used (and make money)."
     }
   ];
 
   return (
-    <section id="what-we-do" className="section-padding bg-black/10">
+    <section id="what-we-do" className="section-padding">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -82,11 +64,8 @@ const WhatWeDo = () => {
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
-            What We Do
+            AI Consulting & Audits That Deliver Real ROI
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto font-poppins user-select-text">
-            We provide comprehensive AI consulting services to help businesses identify, plan, and implement automation solutions that drive real results.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -100,29 +79,24 @@ const WhatWeDo = () => {
               <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
                 {service.title}
               </h3>
-              <p className="text-black mb-6 font-poppins user-select-text">
+              <p className="text-black text-lg font-poppins user-select-text leading-relaxed">
                 {service.description}
               </p>
-              <ul className="space-y-2">
-                {service.benefits.map((benefit, benefitIndex) => (
-                  <li key={benefitIndex} className="flex items-start text-black font-poppins user-select-text">
-                    <ArrowRight className="h-4 w-4 text-black mt-1 mr-2 flex-shrink-0" />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>
 
         <motion.div variants={itemVariants} className="text-center">
+          <p className="text-xl text-black mb-6 font-poppins user-select-text font-semibold">
+            Stop guessing. Start automating.
+          </p>
           <motion.button
             onClick={scrollToConsultation}
             className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get Your Free AI Audit <ArrowRight className="inline ml-2 h-5 w-5" />
+            Book a Call <ArrowRight className="inline ml-2 h-5 w-5" />
           </motion.button>
         </motion.div>
       </motion.div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CalendarBooking from '@/components/CalendarBooking';
+import { CheckCircle } from 'lucide-react';
 
 // Simple error boundary component for Consultation
 class ErrorBoundary extends React.Component {
@@ -20,20 +21,20 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="bg-oritech-gray/30 p-8 rounded-lg border border-oritech-gray/50 text-center">
-          <h3 className="text-xl font-bold text-white mb-4">Booking Calendar</h3>
-          <p className="text-gray-300 mb-6">
+        <div className="bg-white/90 p-8 rounded-lg border border-black/10 text-center shadow-lg">
+          <h3 className="text-xl font-bold text-black mb-4">Booking Calendar</h3>
+          <p className="text-black mb-6">
             Sorry, we're having trouble loading our booking calendar. Please try again later or contact us directly.
           </p>
           <div className="flex flex-col items-center gap-4">
-            <div className="bg-oritech-gray/50 p-4 rounded-lg max-w-md">
-              <p className="text-oritech-red font-semibold mb-2">Contact Information:</p>
-              <p className="text-white">Email: info@oritechai.com</p>
-              <p className="text-white">Phone: +1 (407) 406-9101</p>
+            <div className="bg-black/10 p-4 rounded-lg max-w-md">
+              <p className="text-black font-semibold mb-2">Contact Information:</p>
+              <p className="text-black">Email: info@oritechai.com</p>
+              <p className="text-black">Phone: +1 (407) 406-9101</p>
             </div>
             <button 
               onClick={() => this.setState({ hasError: false })}
-              className="bg-oritech-red hover:bg-oritech-red/90 text-white px-6 py-2 rounded-md"
+              className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-md"
             >
               Try Again
             </button>
@@ -70,6 +71,12 @@ const Consultation = () => {
     }
   };
 
+  const callBenefits = [
+    "Identify your top 3 automation opportunities",
+    "Estimate time and cost savings",
+    "Outline your AI roadmap"
+  ];
+
   return (
     <section id="consultation" className="section-padding relative">
       <motion.div
@@ -78,11 +85,25 @@ const Consultation = () => {
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
       >
-        <motion.div variants={itemVariants} className="text-center mb-8 user-select-text">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 font-poppins">Book Your Free AI Consultation</h2>
-          <p className="text-lg text-black max-w-3xl mx-auto font-poppins">
-            Ready to discover how AI can transform your business? Schedule a free consultation with our AI experts to discuss your specific needs and get a custom roadmap for implementation.
+        <motion.div variants={itemVariants} className="text-center mb-12 user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins">
+            Your Free AI Audit Call is One Click Away
+          </h2>
+          <p className="text-xl text-black max-w-3xl mx-auto font-poppins mb-8">
+            In this no-obligation call, we'll:
           </p>
+          
+          {/* Benefits List */}
+          <div className="max-w-2xl mx-auto mb-8">
+            <ul className="space-y-4">
+              {callBenefits.map((benefit, index) => (
+                <li key={index} className="flex items-center justify-center text-lg text-black font-poppins user-select-text">
+                  <CheckCircle className="h-6 w-6 text-black mr-3 flex-shrink-0" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
         
         {/* Calendar Component with error boundary */}
@@ -92,6 +113,13 @@ const Consultation = () => {
               <CalendarBooking />
             </ErrorBoundary>
           </div>
+        </motion.div>
+
+        {/* Final CTA */}
+        <motion.div variants={itemVariants} className="text-center">
+          <p className="text-lg text-black font-poppins user-select-text font-semibold">
+            Ready to transform your business with AI? Book your call now!
+          </p>
         </motion.div>
 
         {/* Orange glow section */}

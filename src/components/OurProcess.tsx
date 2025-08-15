@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, FileText, Cog, TrendingUp, ArrowRight, CheckCircle } from 'lucide-react';
+import { Search, FileText, Cog, TrendingUp, ArrowRight } from 'lucide-react';
 
 const OurProcess = () => {
   const containerVariants = {
@@ -39,64 +39,32 @@ const OurProcess = () => {
   const processSteps = [
     {
       step: "01",
-      icon: <Search className="h-12 w-12 text-oritech-red" />,
+      icon: <Search className="h-16 w-16 text-black" />,
       title: "Audit",
-      subtitle: "Comprehensive Business Analysis",
-      description: "We conduct a thorough audit of your current processes, identifying bottlenecks, inefficiencies, and automation opportunities.",
-      deliverables: [
-        "Process mapping and analysis",
-        "Automation opportunity assessment",
-        "ROI projections for AI implementation",
-        "Detailed audit report with recommendations"
-      ],
-      timeline: "1-2 weeks"
+      description: "Deep dive into your business processes."
     },
     {
       step: "02",
-      icon: <FileText className="h-12 w-12 text-oritech-red" />,
+      icon: <FileText className="h-16 w-16 text-black" />,
       title: "Plan",
-      subtitle: "Strategic AI Implementation Roadmap",
-      description: "Based on the audit findings, we create a customized AI strategy and implementation plan tailored to your business goals.",
-      deliverables: [
-        "Custom AI strategy document",
-        "Implementation timeline and milestones",
-        "Technology stack recommendations",
-        "Budget and resource planning"
-      ],
-      timeline: "1 week"
+      description: "Clear, prioritized AI strategy tailored to you."
     },
     {
       step: "03",
-      icon: <Cog className="h-12 w-12 text-oritech-red" />,
+      icon: <Cog className="h-16 w-16 text-black" />,
       title: "Implement",
-      subtitle: "AI Solution Development & Deployment",
-      description: "Our team builds and deploys your AI solutions, ensuring seamless integration with your existing systems and workflows.",
-      deliverables: [
-        "AI chatbot and voice agent development",
-        "Workflow automation setup",
-        "System integrations and testing",
-        "Staff training and documentation"
-      ],
-      timeline: "4-8 weeks"
+      description: "We set up and integrate your automations."
     },
     {
       step: "04",
-      icon: <TrendingUp className="h-12 w-12 text-oritech-red" />,
+      icon: <TrendingUp className="h-16 w-16 text-black" />,
       title: "Optimize",
-      subtitle: "Continuous Improvement & Support",
-      description: "We monitor performance, gather feedback, and continuously optimize your AI solutions to maximize ROI and efficiency.",
-      deliverables: [
-        "Performance monitoring and analytics",
-        "Regular optimization updates",
-        "Ongoing technical support",
-        "Quarterly strategy reviews"
-      ],
-      timeline: "Ongoing"
+      description: "We track results and keep improving."
     }
   ];
 
   return (
-    <section id="our-process" className="section-padding bg-black/10">
+    <section id="our-process" className="section-padding">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -105,86 +73,39 @@ const OurProcess = () => {
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
-            Our Process
+            Simple, Fast, and Built for ROI
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto font-poppins user-select-text">
-            Our proven 4-step methodology ensures successful AI implementation with measurable results and minimal disruption to your operations.
-          </p>
         </motion.div>
 
-        <div className="space-y-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {processSteps.map((step, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 text-center shadow-lg"
             >
-              {/* Step Number and Icon */}
-              <div className="lg:col-span-2 text-center lg:text-left">
-                <div className="text-6xl font-bold text-black/50 mb-4 font-poppins user-select-text">
-                  {step.step}
-                </div>
-                <div className="flex justify-center lg:justify-start text-black">
-                  {step.icon}
-                </div>
+              {/* Step Number */}
+              <div className="text-4xl font-bold text-black/30 mb-4 font-poppins user-select-text">
+                {step.step}
+              </div>
+              
+              {/* Icon */}
+              <div className="mb-6 flex justify-center text-black">
+                {step.icon}
               </div>
 
-              {/* Content */}
-              <div className="lg:col-span-6">
-                <h3 className="text-3xl font-bold text-black mb-2 font-poppins user-select-text">
-                  {step.title}
-                </h3>
-                <h4 className="text-xl text-black mb-4 font-poppins user-select-text font-semibold">
-                  {step.subtitle}
-                </h4>
-                <p className="text-black mb-6 font-poppins user-select-text">
-                  {step.description}
-                </p>
-                <div className="text-sm text-black font-poppins user-select-text">
-                  <strong>Timeline:</strong> {step.timeline}
-                </div>
-              </div>
-
-              {/* Deliverables */}
-              <div className="lg:col-span-4">
-                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 shadow-lg">
-                  <h5 className="text-lg font-bold text-black mb-4 font-poppins user-select-text">
-                    Key Deliverables:
-                  </h5>
-                  <ul className="space-y-2">
-                    {step.deliverables.map((deliverable, deliverableIndex) => (
-                      <li key={deliverableIndex} className="flex items-start text-black font-poppins user-select-text">
-                        <CheckCircle className="h-4 w-4 text-black mt-1 mr-2 flex-shrink-0" />
-                        {deliverable}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
+                {step.title}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-black text-lg font-poppins user-select-text leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </div>
-
-        {/* Process Timeline Visual */}
-        <motion.div variants={itemVariants} className="mb-12">
-          <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 shadow-lg">
-            <h3 className="text-2xl font-bold text-black mb-6 text-center font-poppins user-select-text">
-              Typical Project Timeline: 6-12 Weeks
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {processSteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl font-bold text-black mb-2 font-poppins user-select-text">
-                    {step.title}
-                  </div>
-                  <div className="text-black font-poppins user-select-text">
-                    {step.timeline}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div variants={itemVariants} className="text-center">
           <motion.button

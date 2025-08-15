@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import ProblemStatement from './components/ProblemStatement';
 import WhatWeDo from './components/WhatWeDo';
 import WhyWorkWithUs from './components/WhyWorkWithUs';
 import OurProcess from './components/OurProcess';
@@ -191,6 +192,13 @@ function App() {
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
                   <Hero />
+                </ComponentErrorBoundary>
+              </motion.div>
+
+              {/* Problem Statement Section */}
+              <motion.div variants={itemVariants}>
+                <ComponentErrorBoundary>
+                  <ProblemStatement />
                 </ComponentErrorBoundary>
               </motion.div>
 

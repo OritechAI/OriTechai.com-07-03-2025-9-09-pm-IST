@@ -71,14 +71,14 @@ const Navbar1 = ({
   },
   menu = [
     { title: "Home", url: "/", icon: <Home className="h-5 w-5" />, sectionId: "home" },
+    { title: "Problem", url: "/problem", icon: <Briefcase className="h-5 w-5" />, sectionId: "problem-statement" },
     { title: "What We Do", url: "/what-we-do", icon: <Briefcase className="h-5 w-5" />, sectionId: "what-we-do" },
-    { title: "Our Process", url: "/our-process", icon: <CheckCircle className="h-5 w-5" />, sectionId: "our-process" },
     { title: "Testimonials", url: "/testimonials", icon: <Star className="h-5 w-5" />, sectionId: "testimonials" }
   ],
   mobileExtraLinks = [
     { name: "Home", url: "/", sectionId: "home" },
+    { name: "Problem", url: "/problem", sectionId: "problem-statement" },
     { name: "What We Do", url: "/what-we-do", sectionId: "what-we-do" },
-    { name: "Our Process", url: "/our-process", sectionId: "our-process" },
   ],
   auth = {
     login: { text: "Why Choose Us", url: "#why-work-with-us", sectionId: "why-work-with-us" },

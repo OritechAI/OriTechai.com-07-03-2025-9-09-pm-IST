@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp, Zap, Target } from 'lucide-react';
+import { TrendingUp, Zap, Target } from 'lucide-react';
 
 const Hero = () => {
   const containerVariants = {
@@ -47,47 +47,32 @@ const Hero = () => {
       >
         <motion.div variants={itemVariants} className="mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mb-6 font-poppins user-select-text leading-tight">
-            AI Consulting & Audits to <span className="text-black font-extrabold">Transform Your Business</span>
+            AI Consulting & Audits to Transform Your Business
           </h1>
-          <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto font-poppins user-select-text leading-relaxed">
-            We help businesses audit their current processes, identify automation opportunities, and implement AI solutions to <strong className="text-black">cut costs by 40%</strong> and <strong className="text-black">grow revenue by 25%</strong>.
+          <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto font-poppins user-select-text leading-relaxed mb-8">
+            We help businesses audit their processes, uncover automation opportunities, and implement AI strategies that cut costs, boost efficiency, and drive revenue.
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-12">
+        <motion.div variants={itemVariants} className="mb-6">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-poppins"
+            className="bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Book Your Free AI Consultation <ArrowRight className="inline ml-2 h-5 w-5" />
+            Book Your Call
           </motion.button>
         </motion.div>
 
-        {/* Key Benefits */}
-        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 hover:bg-white/95 transition-colors duration-300 shadow-lg">
-            <TrendingUp className="h-12 w-12 text-black mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-black mb-2 font-poppins user-select-text">Increase Revenue</h3>
-            <p className="text-black font-poppins user-select-text">AI automation helps you serve more customers, faster, with personalized experiences that drive sales.</p>
-          </div>
-          
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 hover:bg-white/95 transition-colors duration-300 shadow-lg">
-            <Zap className="h-12 w-12 text-black mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-black mb-2 font-poppins user-select-text">Cut Operational Costs</h3>
-            <p className="text-black font-poppins user-select-text">Automate repetitive tasks, reduce manual errors, and free up your team for high-value work.</p>
-          </div>
-          
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 hover:bg-white/95 transition-colors duration-300 shadow-lg">
-            <Target className="h-12 w-12 text-black mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-black mb-2 font-poppins user-select-text">Strategic Implementation</h3>
-            <p className="text-black font-poppins user-select-text">Get a custom AI strategy tailored to your business goals and industry requirements.</p>
-          </div>
+        <motion.div variants={itemVariants} className="mb-16">
+          <p className="text-lg text-black max-w-2xl mx-auto font-poppins user-select-text italic">
+            In just 30 minutes, we'll map your biggest AI wins — no fluff, no jargon, just actionable insights.
+          </p>
         </motion.div>
 
         {/* Trust Indicators */}
-        <motion.div variants={itemVariants} className="mt-16 text-center">
+        <motion.div variants={itemVariants} className="text-center">
           <p className="text-black mb-6 font-poppins user-select-text font-semibold">Trusted by businesses worldwide</p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             <img src="https://1min.ai/_next/image?url=https%3A%2F%2Fblog1minai.wordpress.com%2Fwp-content%2Fuploads%2F2024%2F08%2F1minai-ai-chat-with-gpt-4o-illustration.jpg&w=1920&q=75" 

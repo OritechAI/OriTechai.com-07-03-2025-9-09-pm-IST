@@ -36,42 +36,8 @@ const Testimonials = () => {
     }
   };
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      title: "CEO, TechFlow Solutions",
-      company: "Software Development",
-      rating: 5,
-      testimonial: "OritechAI transformed our customer service operations completely. We went from 8-hour response times to instant AI-powered responses, reducing support costs by 45% while improving customer satisfaction scores by 60%. The ROI was evident within the first month.",
-      results: "45% cost reduction, 60% satisfaction increase"
-    },
-    {
-      name: "Michael Chen",
-      title: "Operations Director",
-      company: "E-commerce Platform",
-      rating: 5,
-      testimonial: "The AI audit revealed inefficiencies we didn't even know existed. Their implementation of automated workflows saved us 20 hours per week and increased our order processing speed by 300%. Our team can now focus on strategic growth instead of manual tasks.",
-      results: "20 hours/week saved, 300% faster processing"
-    },
-    {
-      name: "Lisa Rodriguez",
-      title: "Founder",
-      company: "Digital Marketing Agency",
-      rating: 5,
-      testimonial: "Working with OritechAI was a game-changer. Their AI chatbot handles 80% of our client inquiries automatically, and the lead qualification system has improved our conversion rates by 35%. The implementation was smooth and the support is outstanding.",
-      results: "80% automated inquiries, 35% conversion increase"
-    }
-  ];
-
-  const metrics = [
-    { value: "98%", label: "Client Satisfaction Rate" },
-    { value: "6 Months", label: "Average ROI Timeline" },
-    { value: "40%", label: "Average Cost Reduction" },
-    { value: "25%", label: "Average Revenue Increase" }
-  ];
-
   return (
-    <section id="testimonials" className="section-padding">
+    <section id="testimonials" className="section-padding bg-black/10">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -80,96 +46,52 @@ const Testimonials = () => {
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
-            Client Success Stories
+            Real Businesses. Real Results.
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto font-poppins user-select-text">
-            See how businesses like yours have transformed their operations and achieved remarkable results with our AI consulting services.
-          </p>
         </motion.div>
 
-        {/* Success Metrics */}
-        <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {metrics.map((metric, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-black mb-2 font-poppins user-select-text">
-                {metric.value}
-              </div>
-              <div className="text-black font-poppins user-select-text">
-                {metric.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 relative shadow-lg"
-            >
-              <Quote className="h-8 w-8 text-black mb-4" />
-              
-              {/* Star Rating */}
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-
-              <p className="text-black mb-6 font-poppins user-select-text italic">
-                "{testimonial.testimonial}"
-              </p>
-
-              {/* Results Highlight */}
-              <div className="bg-black/10 border border-black/30 p-3 rounded-lg mb-6">
-                <p className="text-black font-semibold text-sm font-poppins user-select-text">
-                  Results: {testimonial.results}
-                </p>
-              </div>
-
-              {/* Author Info */}
-              <div>
-                <p className="text-black font-bold font-poppins user-select-text">
-                  {testimonial.name}
-                </p>
-                <p className="text-black text-sm font-poppins user-select-text">
-                  {testimonial.title}
-                </p>
-                <p className="text-black text-sm font-poppins user-select-text">
-                  {testimonial.company}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Case Study Highlight */}
-        <motion.div variants={itemVariants} className="bg-white/90 border border-black/20 p-8 rounded-lg mb-12 shadow-lg">
-          <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
-            Featured Case Study: E-commerce Transformation
+        {/* Case Study */}
+        <motion.div variants={itemVariants} className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 shadow-lg mb-12 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold text-black mb-6 font-poppins user-select-text text-center">
+            Case Study: Service Business Transformation
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-lg font-bold text-black mb-2 font-poppins user-select-text">
-                The Challenge
-              </h4>
-              <p className="text-black mb-4 font-poppins user-select-text">
-                A growing e-commerce platform was struggling with manual order processing, customer service bottlenecks, and inventory management issues that were limiting their growth potential.
-              </p>
+          <p className="text-lg text-black mb-6 font-poppins user-select-text leading-relaxed text-center">
+            A 12-person service business cut manual admin hours by 30% and increased lead conversion by 18% after implementing our AI audit recommendations.
+          </p>
+          
+          {/* Results Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-black/10 p-4 rounded-lg border border-black/20 text-center">
+              <div className="text-3xl font-bold text-black mb-2 font-poppins user-select-text">30%</div>
+              <p className="text-black font-poppins user-select-text">Reduction in Manual Hours</p>
             </div>
-            <div>
-              <h4 className="text-lg font-bold text-black mb-2 font-poppins user-select-text">
-                The Results
-              </h4>
-              <ul className="text-black space-y-1 font-poppins user-select-text">
-                <li>• 300% faster order processing</li>
-                <li>• 45% reduction in operational costs</li>
-                <li>• 80% of customer inquiries automated</li>
-                <li>• 25% increase in customer satisfaction</li>
-              </ul>
+            <div className="bg-black/10 p-4 rounded-lg border border-black/20 text-center">
+              <div className="text-3xl font-bold text-black mb-2 font-poppins user-select-text">18%</div>
+              <p className="text-black font-poppins user-select-text">Increase in Lead Conversion</p>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Testimonial */}
+        <motion.div variants={itemVariants} className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 shadow-lg max-w-4xl mx-auto mb-12">
+          <Quote className="h-8 w-8 text-black mb-4 mx-auto" />
+          
+          {/* Star Rating */}
+          <div className="flex justify-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+            ))}
+          </div>
+
+          <p className="text-xl text-black mb-6 font-poppins user-select-text italic text-center leading-relaxed">
+            "OritechAI showed us exactly where we were losing time and money. The automation plan paid for itself in weeks."
+          </p>
+
+          {/* Author Info */}
+          <div className="text-center">
+            <p className="text-black font-bold font-poppins user-select-text">
+              COO, B2B Agency
+            </p>
           </div>
         </motion.div>
 
