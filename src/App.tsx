@@ -36,7 +36,7 @@ class ComponentErrorBoundary extends React.Component {
             onClick={() => this.setState({ hasError: false })}
             className="text-sm bg-oritech-red/80 hover:bg-oritech-red text-white px-4 py-2 rounded"
           >
-            Try Again
+            Try again
           </button>
         </div>
       );
@@ -140,21 +140,19 @@ function App() {
   }, [skipAnimation]);
 
   return (
-    <div className="min-h-screen bg-black">
-
-      {/* Fixed Video Background */}
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Background Video */}
       {!videoError && (
         <video
           ref={videoRef}
+          className="video-background"
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
-          className="video-background"
           onError={() => {
-            console.error('Video failed to load');
             setVideoError(true);
+            console.error('Video failed to load');
           }}
           onLoadedData={() => {
             setVideoLoaded(true);
@@ -177,6 +175,15 @@ function App() {
       {/* Fallback background if video fails */}
       {videoError && (
         <div className="video-fallback"></div>
+      )}
+
+      {/* Header loads first, separate from other content for better performance */}
+      {headerReady && (
+        <div className="relative z-30">
+          <ComponentErrorBoundary>
+            <Header activeSection={activeSection} />
+          </ComponentErrorBoundary>
+        </div>
       )}
 
       {contentReady && (
