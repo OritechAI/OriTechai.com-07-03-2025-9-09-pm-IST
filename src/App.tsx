@@ -36,16 +36,21 @@ class ComponentErrorBoundary extends React.Component {
 }
 
 function App() {
+  // Animation states
   const [skipAnimation, setSkipAnimation] = useState(false);
   const [headerReady, setHeaderReady] = useState(false);
   const [contentReady, setContentReady] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  
+  // Video states (single declarations)
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   
+  // Refs
   const videoRef = useRef(null);
   const contentRef = useRef(null);
 
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -68,8 +73,8 @@ function App() {
     }
   };
 
+  // Check visit status and handle animation timing
   useEffect(() => {
-    // Check if user has visited before and when
     const checkVisitStatus = () => {
       try {
         const lastVisit = localStorage.getItem('lastVisit');
@@ -85,6 +90,7 @@ function App() {
             setHeaderReady(true);
             setContentReady(true);
             setShowContent(true);
+            return;
           }
         }
         
@@ -94,16 +100,13 @@ function App() {
         console.error("Error checking visit status:", error);
         // Fallback to default behavior
         setSkipAnimation(false);
-        setHeaderReady(false);
-        setContentReady(false);
-        setShowContent(false);
       }
     };
     
     checkVisitStatus();
     
     if (!skipAnimation) {
-      // Make header visible at 3 seconds (faster since no spline loading)
+      // Make header visible at 3 seconds
       const headerTimer = setTimeout(() => {
         setHeaderReady(true);
       }, 3000);
@@ -126,6 +129,26 @@ function App() {
     }
   }, [skipAnimation]);
 
+  // Video event handlers
+  const handleVideoError = () => {
+    console.error('Video failed to load');
+    setVideoError(true);
+  };
+
+  const handleVideoLoaded = () => {
+    console.log('Video loaded successfully');
+    setVideoLoaded(true);
+    if (videoRef.current) {
+      videoRef.current.setAttribute('data-loaded', 'true');
+    }
+  };
+
+  const handleVideoCanPlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(console.error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Background Video */}
@@ -137,19 +160,10 @@ function App() {
           muted
           loop
           playsInline
-          onError={() => {
-            setVideoError(true);
-            console.error('Video failed to load');
-          }}
-          onLoadedData={() => {
-            setVideoLoaded(true);
-            console.log('Video loaded successfully');
-          }}
-          onCanPlay={() => {
-            if (videoRef.current) {
-              videoRef.current.play().catch(console.error);
-            }
-          }}
+          preload="auto"
+          onError={handleVideoError}
+          onLoadedData={handleVideoLoaded}
+          onCanPlay={handleVideoCanPlay}
         >
           <source src="/Robot Website.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -181,6 +195,7 @@ function App() {
         )}
       </AnimatePresence>
 
+      {/* Main Content */}
       {contentReady && (
         <motion.div
           ref={contentRef}
@@ -259,6 +274,7 @@ function App() {
               </motion.div>
             </main>
             
+            {/* Footer */}
             <motion.div variants={itemVariants}>
               <ComponentErrorBoundary>
                 <footer className="content-section">
