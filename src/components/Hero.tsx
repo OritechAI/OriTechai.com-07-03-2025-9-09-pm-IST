@@ -37,7 +37,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="section-padding relative overflow-hidden bg-black text-white" style={{ marginTop: "10vh" }}>
+    <section id="home" className="section-padding relative overflow-hidden text-white" style={{ marginTop: "10vh", backgroundColor: 'transparent' }}>
       <motion.div
         initial="hidden"
         whileInView="visible"

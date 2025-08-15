@@ -37,7 +37,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-gray-50 text-black">
+    <section id="testimonials" className="section-padding bg-gray-50/95 text-black relative z-10 backdrop-blur-sm">
       <motion.div
         initial="hidden"
         whileInView="visible"

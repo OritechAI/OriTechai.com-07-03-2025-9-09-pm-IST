@@ -65,10 +65,8 @@ body {
 /* Color scheme variables */
 :root {
   --primary-red: #E41E26;
-  --gold-accent: #FFD700;
   --light-gray: #F2F2F2;
   --off-white: #F8F8F8;
-  --success-green: #10B981;
 }
 
 /* Primary CTA Button */
@@ -80,8 +78,9 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: var(--gold-accent);
-  color: black;
+  background-color: var(--primary-red);
+  color: white;
+  transform: scale(1.05);
 }
 
 /* Secondary CTA Button */
@@ -114,14 +113,6 @@ body {
   color: var(--primary-red);
 }
 
-.text-red-emphasis {
-  color: var(--primary-red);
-}
-
-.text-success {
-  color: var(--primary-red);
-}
-
 /* Card styles */
 .card-light {
   background-color: white;
@@ -144,27 +135,9 @@ body {
   backdrop-filter: blur(8px);
 }
 
-/* Section dividers */
-.section-divider {
-  background-color: var(--primary-red);
-  height: 4px;
-  width: 100%;
-  margin: 2rem 0;
-}
-
 /* Icon styling */
 .icon-red {
   color: var(--primary-red);
-}
-
-.icon-gold {
-  color: var(--gold-accent);
-}
-
-/* Remove old background styles */
-.fixed-header {
-  background-color: var(--off-white);
-  color: #000000;
 }
 
 /* Input styling */
@@ -180,16 +153,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Remove old gradient background */
-.hero-section {
-  background-color: #000000;
-}
-
-.hero-section::before,
-.hero-wave {
-  display: none;
-}
-
 /* Footer should stay dark */
 .footer-dark {
   background-color: #000000;
@@ -200,12 +163,7 @@ body {
   color: white;
 }
 
-/* Remove background pattern */
-.bg-pattern {
-  display: none;
-}
-
-/* Metrics styling */
+/* Metrics styling - ALL RED */
 .metric-positive {
   color: var(--primary-red);
   font-weight: bold;
@@ -221,21 +179,6 @@ body {
   -webkit-user-select: text !important;
   -moz-user-select: text !important;
   -ms-user-select: text !important;
-}
-
-spline-viewer {
-  width: 100% !important;
-  height: 100% !important;
-  position: fixed !important;
-  top: -3% !important; /* Moved 3% upwards */
-  left: 0 !important;
-  pointer-events: auto !important;
-  z-index: 5 !important;
-}
-
-.typewriter-container {
-  position: relative;
-  z-index: 10;
 }
 
 .section-padding {
@@ -263,19 +206,6 @@ spline-viewer {
   @apply w-full px-4 py-3 bg-oritech-gray border-0 rounded-md focus:ring-2 focus:ring-oritech-red focus:outline-none text-white;
 }
 
-.animation-visible {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-html {
-  scroll-behavior: smooth !important;
-}
-
 /* Enhanced smooth scrolling */
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -293,40 +223,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ce0005;
+  background: #E41E26;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a30004;
-}
-
-/* Ensure content doesn't block mouse events from reaching Spline */
-.spline-container {
-  pointer-events: none;
-}
-
-/* But allow interaction with actual content elements */
-.content-container * {
-  pointer-events: auto;
-}
-
-/* Animation for gradient background fallback */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Force scroll to work even when browser might prevent it */
-html, body {
-  overscroll-behavior-y: none;
+  background: #c0151c;
 }
 
 /* Performance optimizations */
@@ -344,7 +246,7 @@ html, body {
   backface-visibility: hidden;
 }
 
-/* Hero section with green wave background */
+/* Hero section with red wave background */
 .hero-section {
   background-color: #000;
   position: relative;
@@ -358,7 +260,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(125deg, rgba(206,0,5,0.1) 0%, rgba(206,0,5,0.2) 100%);
+  background: linear-gradient(125deg, rgba(228,30,38,0.1) 0%, rgba(228,30,38,0.2) 100%);
   z-index: 1;
 }
 
@@ -368,7 +270,7 @@ html, body {
   height: 120%;
   top: -10%;
   left: -10%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1000 C400,800 600,900 1000,1000 L1000,0 L0,0 Z' fill='%23ce0005' opacity='0.2'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1000 C400,800 600,900 1000,1000 L1000,0 L0,0 Z' fill='%23E41E26' opacity='0.2'/%3E%3C/svg%3E");
   background-size: cover;
   z-index: 0;
   animation: wave-animation 20s infinite alternate ease-in-out;
@@ -490,7 +392,7 @@ html, body {
   animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Fixed header styles to ensure it stays at the top and overrides all content */
+/* Fixed header styles */
 .fixed-header {
   position: fixed;
   top: 0;
@@ -504,7 +406,7 @@ html, body {
 
 /* Adjust content to account for fixed header */
 .content-container {
-  margin-top: 60px; /* Add space for the fixed header */
+  margin-top: 60px;
 }
 
 /* Ensure all text elements are selectable */
@@ -522,7 +424,7 @@ p, h1, h2, h3, h4, h5, h6, span, div, button, a {
 /* Optimize image rendering */
 img {
   image-rendering: auto;
-  transform: translateZ(0); /* Hardware acceleration for images */
+  transform: translateZ(0);
 }
 
 /* Improve animation performance */
@@ -550,18 +452,8 @@ main {
   z-index: 10000;
 }
 
-/* Mobile-specific adjustments for Services section button */
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
-  /* Adjust button position on mobile */
-  #services .mt-[-5rem] {
-    margin-top: 1rem !important; /* Override negative margin on mobile */
-  }
-  
-  /* Ensure proper vertical spacing after the Feature grid on mobile */
-  #services .feature-grid + div {
-    margin-top: 2rem;
-  }
-  
   .fixed-header {
     padding: 0.5rem 1rem;
   }
@@ -573,13 +465,11 @@ main {
 
 /* Enhanced touch interactions for mobile devices */
 @media (hover: none) and (pointer: coarse) {
-  /* Improve touch target sizes */
   button, a {
     min-height: 44px;
     min-width: 44px;
   }
   
-  /* Ensure smooth animations on lower-end devices */
   .transition-all {
     transition-duration: 0.2s;
   }

@@ -53,6 +53,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [headerReady, setHeaderReady] = useState(false);
   const [skipAnimation, setSkipAnimation] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -163,9 +164,26 @@ function App() {
   return (
     <div className="min-h-screen bg-black">
 
+      {/* Video Background */}
+      {!videoError && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="fixed inset-0 w-full h-full object-cover z-0"
+          onError={() => setVideoError(true)}
+        >
+          <source src="/Robot Website.mp4" type="video/mp4" />
+        </video>
+      )}
+
+      {/* Dark overlay for text readability */}
+      <div className="fixed inset-0 bg-black/40 z-1"></div>
+
       {/* Header loads first, separate from other content for better performance */}
       {headerReady && (
-        <div className="relative z-20">
+        <div className="relative z-30">
           <ComponentErrorBoundary>
             <Header activeSection={activeSection} />
           </ComponentErrorBoundary>
@@ -178,7 +196,7 @@ function App() {
           initial={{ opacity: 0 }}
           animate={showContent ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10"
+          className="relative z-20"
         >
           <motion.div
             variants={containerVariants}

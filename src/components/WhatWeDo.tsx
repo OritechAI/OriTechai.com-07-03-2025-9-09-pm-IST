@@ -55,7 +55,7 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section id="what-we-do" className="section-padding bg-black text-white">
+    <section id="what-we-do" className="section-padding bg-black/80 text-white relative z-10 backdrop-blur-sm">
       <motion.div
         initial="hidden"
         whileInView="visible"
