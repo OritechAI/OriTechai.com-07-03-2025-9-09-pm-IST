@@ -178,16 +178,16 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--albanian-red) 0%, #c01419 100%);
-  color: var(--pure-white);
-  border: 2px solid var(--albanian-red);
-  box-shadow: 0 4px 15px rgba(226, 30, 38, 0.4);
+  background: linear-gradient(135deg, #FFD700 0%, #e6c200 100%);
+  color: var(--pure-black);
+  border: 2px solid #FFD700;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #c01419 0%, var(--albanian-red) 100%);
+  background: linear-gradient(135deg, #e6c200 0%, #FFD700 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(226, 30, 38, 0.6);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
 }
 
 .btn-secondary {
@@ -202,14 +202,16 @@ p {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-accent) 0%, #e6c200 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #e6c200 100%);
   color: var(--pure-black);
-  border: 2px solid var(--gold-accent);
+  border: 2px solid #FFD700;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
 .btn-gold:hover {
-  background: linear-gradient(135deg, #e6c200 0%, var(--gold-accent) 100%);
+  background: linear-gradient(135deg, #e6c200 0%, #FFD700 100%);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
 }
 
 /* Hero Section */
