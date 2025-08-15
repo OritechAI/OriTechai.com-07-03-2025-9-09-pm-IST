@@ -55,7 +55,7 @@ const WhyWorkWithUs = () => {
   ];
 
   return (
-    <section id="why-work-with-us" className="section-padding bg-gray-50/95 text-black relative z-10 backdrop-blur-sm">
+    <section id="why-work-with-us" className="section-padding text-black relative">
       <motion.div
         initial="hidden"
         whileInView="visible"

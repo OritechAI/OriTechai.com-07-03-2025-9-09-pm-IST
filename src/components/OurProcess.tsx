@@ -64,7 +64,7 @@ const OurProcess = () => {
   ];
 
   return (
-    <section id="our-process" className="section-padding bg-black/80 text-white relative z-10 backdrop-blur-sm">
+    <section id="our-process" className="section-padding text-white relative">
       <motion.div
         initial="hidden"
         whileInView="visible"

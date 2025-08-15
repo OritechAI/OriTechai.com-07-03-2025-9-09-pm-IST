@@ -78,7 +78,7 @@ const Consultation = () => {
   ];
 
   return (
-    <section id="consultation" className="section-padding relative bg-black/80 text-white z-10 backdrop-blur-sm">
+    <section id="consultation" className="section-padding relative text-white">
       <motion.div
         initial="hidden"
         whileInView="visible"

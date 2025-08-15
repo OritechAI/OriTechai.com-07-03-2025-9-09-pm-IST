@@ -60,6 +60,62 @@ body {
   overflow-x: hidden;
   user-select: text;
   padding-top: 80px;
+  position: relative;
+}
+
+/* Full-Page Video Background Styles */
+.video-background {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Semi-transparent overlay for readability */
+.video-overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Fallback background if video fails */
+.video-fallback {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  z-index: -2;
+}
+
+/* Content sections styling */
+.content-section {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  min-height: auto;
+}
+
+.content-section-light {
+  background-color: rgba(248, 248, 248, 0.95);
+  backdrop-filter: blur(2px);
+  color: #000000;
+}
+
+.content-section-light * {
+  color: inherit;
 }
 
 /* Color scheme variables */
@@ -98,13 +154,14 @@ body {
 
 /* Light section styles */
 .section-light {
-  background-color: var(--off-white);
+  background-color: rgba(248, 248, 248, 0.95);
+  backdrop-filter: blur(2px);
   color: #000000;
 }
 
 /* Dark section styles */
 .section-dark {
-  background-color: #000000;
+  background-color: transparent;
   color: #ffffff;
 }
 
@@ -132,7 +189,8 @@ body {
 .header-light {
   background-color: rgba(248, 248, 248, 0.95);
   color: #000000;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Icon styling */
@@ -155,7 +213,8 @@ body {
 
 /* Footer should stay dark */
 .footer-dark {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
   color: white;
 }
 
@@ -461,6 +520,28 @@ main {
   body {
     padding-top: 70px;
   }
+  
+  /* Ensure video covers mobile screens properly */
+  .video-background {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-position: center center;
+  }
+  
+  /* Adjust overlay opacity for mobile readability */
+  .video-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Video loading states */
+.video-background:not([data-loaded="true"]) {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.video-background[data-loaded="true"] {
+  opacity: 1;
 }
 
 /* Enhanced touch interactions for mobile devices */
@@ -472,5 +553,11 @@ main {
   
   .transition-all {
     transition-duration: 0.2s;
+  }
+  
+  /* Optimize video playback on mobile */
+  .video-background {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 }

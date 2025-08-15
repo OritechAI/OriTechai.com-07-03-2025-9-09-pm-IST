@@ -27,7 +27,7 @@ const ProblemStatement = () => {
   };
 
   return (
-    <section id="problem-statement" className="section-padding bg-gray-50/95 text-black relative z-10 backdrop-blur-sm">
+    <section id="problem-statement" className="section-padding text-black relative">
       <motion.div
         initial="hidden"
         whileInView="visible"

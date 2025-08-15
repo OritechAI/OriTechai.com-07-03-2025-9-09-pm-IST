@@ -54,7 +54,9 @@ function App() {
   const [headerReady, setHeaderReady] = useState(false);
   const [skipAnimation, setSkipAnimation] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Check if user has visited before and when
@@ -164,22 +166,42 @@ function App() {
   return (
     <div className="min-h-screen bg-black">
 
-      {/* Video Background */}
+      {/* Fixed Video Background */}
       {!videoError && (
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          className="fixed inset-0 w-full h-full object-cover z-0"
-          onError={() => setVideoError(true)}
+          preload="auto"
+          className="video-background"
+          onError={() => {
+            console.error('Video failed to load');
+            setVideoError(true);
+          }}
+          onLoadedData={() => {
+            setVideoLoaded(true);
+            console.log('Video loaded successfully');
+          }}
+          onCanPlay={() => {
+            if (videoRef.current) {
+              videoRef.current.play().catch(console.error);
+            }
+          }}
         >
           <source src="/Robot Website.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
       )}
 
-      {/* Dark overlay for text readability */}
-      <div className="fixed inset-0 bg-black/40 z-1"></div>
+      {/* Semi-transparent overlay for readability */}
+      <div className="video-overlay"></div>
+
+      {/* Fallback background if video fails */}
+      {videoError && (
+        <div className="video-fallback"></div>
+      )}
 
       {/* Header loads first, separate from other content for better performance */}
       {headerReady && (
@@ -207,72 +229,72 @@ function App() {
               {/* Hero Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <div className="section-dark">
+                  <section className="content-section">
                     <Hero />
-                  </div>
+                  </section>
                 </ComponentErrorBoundary>
               </motion.div>
 
               {/* Problem Statement Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <div className="section-light">
+                  <section className="content-section content-section-light">
                     <ProblemStatement />
-                  </div>
+                  </section>
                 </ComponentErrorBoundary>
               </motion.div>
 
               {/* What We Do Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <div className="section-dark">
+                  <section className="content-section">
                     <WhatWeDo />
-                  </div>
+                  </section>
                 </ComponentErrorBoundary>
               </motion.div>
               
               {/* Why Work With Us Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <div className="section-light">
+                  <section className="content-section content-section-light">
                     <WhyWorkWithUs />
-                  </div>
+                  </section>
                 </ComponentErrorBoundary>
               </motion.div>
               
               {/* Our Process Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <div className="section-dark">
+                  <section className="content-section">
                     <OurProcess />
-                  </div>
+                  </section>
                 </ComponentErrorBoundary>
               </motion.div>
 
               {/* Testimonials Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <div className="section-light">
+                  <section className="content-section content-section-light">
                     <Testimonials />
-                  </div>
+                  </section>
                 </ComponentErrorBoundary>
               </motion.div>
               
               {/* Consultation Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <div className="section-dark">
+                  <section className="content-section">
                     <Consultation />
-                  </div>
+                  </section>
                 </ComponentErrorBoundary>
               </motion.div>
             </main>
             
             <motion.div variants={itemVariants}>
               <ComponentErrorBoundary>
-                <div className="footer-dark">
+                <footer className="content-section">
                   <Footer />
-                </div>
+                </footer>
               </ComponentErrorBoundary>
             </motion.div>
           </motion.div>
