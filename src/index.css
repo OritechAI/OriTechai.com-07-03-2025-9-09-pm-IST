@@ -6,7 +6,7 @@
   :root {
     --albanian-red: #E41E26;
     --pure-black: #000000;
-    --gold-accent: #FFD700;
+    --gold-accent: #E41E26;
     --pure-white: #FFFFFF;
     --overlay-black: rgba(0, 0, 0, 0.4);
     --card-dark: rgba(0, 0, 0, 0.8);
@@ -38,6 +38,8 @@ body {
   object-fit: cover;
   z-index: -10;
   pointer-events: none;
+  filter: blur(2px) brightness(0.8);
+  will-change: filter;
 }
 
 .video-overlay {
