@@ -96,7 +96,7 @@ const OurProcess = () => {
   ];
 
   return (
-    <section id="our-process" className="section-padding bg-oritech-gray/10">
+    <section id="our-process" className="section-padding bg-black/10">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -104,10 +104,10 @@ const OurProcess = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
             Our Process
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-poppins user-select-text">
+          <p className="text-xl text-black max-w-3xl mx-auto font-poppins user-select-text">
             Our proven 4-step methodology ensures successful AI implementation with measurable results and minimal disruption to your operations.
           </p>
         </motion.div>
@@ -121,40 +121,40 @@ const OurProcess = () => {
             >
               {/* Step Number and Icon */}
               <div className="lg:col-span-2 text-center lg:text-left">
-                <div className="text-6xl font-bold text-oritech-red/30 mb-4 font-poppins user-select-text">
+                <div className="text-6xl font-bold text-black/50 mb-4 font-poppins user-select-text">
                   {step.step}
                 </div>
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex justify-center lg:justify-start text-black">
                   {step.icon}
                 </div>
               </div>
 
               {/* Content */}
               <div className="lg:col-span-6">
-                <h3 className="text-3xl font-bold text-white mb-2 font-poppins user-select-text">
+                <h3 className="text-3xl font-bold text-black mb-2 font-poppins user-select-text">
                   {step.title}
                 </h3>
-                <h4 className="text-xl text-oritech-red mb-4 font-poppins user-select-text">
+                <h4 className="text-xl text-black mb-4 font-poppins user-select-text font-semibold">
                   {step.subtitle}
                 </h4>
-                <p className="text-gray-300 mb-6 font-poppins user-select-text">
+                <p className="text-black mb-6 font-poppins user-select-text">
                   {step.description}
                 </p>
-                <div className="text-sm text-gray-400 font-poppins user-select-text">
+                <div className="text-sm text-black font-poppins user-select-text">
                   <strong>Timeline:</strong> {step.timeline}
                 </div>
               </div>
 
               {/* Deliverables */}
               <div className="lg:col-span-4">
-                <div className="bg-oritech-gray/30 backdrop-blur-sm p-6 rounded-lg border border-oritech-gray/50">
-                  <h5 className="text-lg font-bold text-white mb-4 font-poppins user-select-text">
+                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 shadow-lg">
+                  <h5 className="text-lg font-bold text-black mb-4 font-poppins user-select-text">
                     Key Deliverables:
                   </h5>
                   <ul className="space-y-2">
                     {step.deliverables.map((deliverable, deliverableIndex) => (
-                      <li key={deliverableIndex} className="flex items-start text-gray-300 font-poppins user-select-text">
-                        <CheckCircle className="h-4 w-4 text-oritech-red mt-1 mr-2 flex-shrink-0" />
+                      <li key={deliverableIndex} className="flex items-start text-black font-poppins user-select-text">
+                        <CheckCircle className="h-4 w-4 text-black mt-1 mr-2 flex-shrink-0" />
                         {deliverable}
                       </li>
                     ))}
@@ -167,17 +167,17 @@ const OurProcess = () => {
 
         {/* Process Timeline Visual */}
         <motion.div variants={itemVariants} className="mb-12">
-          <div className="bg-oritech-gray/30 backdrop-blur-sm p-8 rounded-lg border border-oritech-gray/50">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center font-poppins user-select-text">
+          <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 shadow-lg">
+            <h3 className="text-2xl font-bold text-black mb-6 text-center font-poppins user-select-text">
               Typical Project Timeline: 6-12 Weeks
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl font-bold text-oritech-red mb-2 font-poppins user-select-text">
+                  <div className="text-2xl font-bold text-black mb-2 font-poppins user-select-text">
                     {step.title}
                   </div>
-                  <div className="text-gray-300 font-poppins user-select-text">
+                  <div className="text-black font-poppins user-select-text">
                     {step.timeline}
                   </div>
                 </div>
@@ -189,7 +189,7 @@ const OurProcess = () => {
         <motion.div variants={itemVariants} className="text-center">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-oritech-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

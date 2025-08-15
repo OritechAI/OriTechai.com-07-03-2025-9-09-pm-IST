@@ -79,10 +79,10 @@ const Testimonials = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
             Client Success Stories
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-poppins user-select-text">
+          <p className="text-xl text-black max-w-3xl mx-auto font-poppins user-select-text">
             See how businesses like yours have transformed their operations and achieved remarkable results with our AI consulting services.
           </p>
         </motion.div>
@@ -91,10 +91,10 @@ const Testimonials = () => {
         <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-oritech-red mb-2 font-poppins user-select-text">
+              <div className="text-4xl md:text-5xl font-bold text-black mb-2 font-poppins user-select-text">
                 {metric.value}
               </div>
-              <div className="text-gray-300 font-poppins user-select-text">
+              <div className="text-black font-poppins user-select-text">
                 {metric.label}
               </div>
             </div>
@@ -107,9 +107,9 @@ const Testimonials = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-oritech-gray/30 backdrop-blur-sm p-8 rounded-lg border border-oritech-gray/50 hover:bg-oritech-gray/40 transition-all duration-300 relative"
+              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 relative shadow-lg"
             >
-              <Quote className="h-8 w-8 text-oritech-red mb-4" />
+              <Quote className="h-8 w-8 text-black mb-4" />
               
               {/* Star Rating */}
               <div className="flex mb-4">
@@ -118,26 +118,26 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <p className="text-gray-300 mb-6 font-poppins user-select-text italic">
+              <p className="text-black mb-6 font-poppins user-select-text italic">
                 "{testimonial.testimonial}"
               </p>
 
               {/* Results Highlight */}
-              <div className="bg-oritech-red/10 border border-oritech-red/30 p-3 rounded-lg mb-6">
-                <p className="text-oritech-red font-semibold text-sm font-poppins user-select-text">
+              <div className="bg-black/10 border border-black/30 p-3 rounded-lg mb-6">
+                <p className="text-black font-semibold text-sm font-poppins user-select-text">
                   Results: {testimonial.results}
                 </p>
               </div>
 
               {/* Author Info */}
               <div>
-                <p className="text-white font-bold font-poppins user-select-text">
+                <p className="text-black font-bold font-poppins user-select-text">
                   {testimonial.name}
                 </p>
-                <p className="text-gray-400 text-sm font-poppins user-select-text">
+                <p className="text-black text-sm font-poppins user-select-text">
                   {testimonial.title}
                 </p>
-                <p className="text-gray-400 text-sm font-poppins user-select-text">
+                <p className="text-black text-sm font-poppins user-select-text">
                   {testimonial.company}
                 </p>
               </div>
@@ -146,24 +146,24 @@ const Testimonials = () => {
         </div>
 
         {/* Case Study Highlight */}
-        <motion.div variants={itemVariants} className="bg-oritech-red/10 border border-oritech-red/30 p-8 rounded-lg mb-12">
-          <h3 className="text-2xl font-bold text-white mb-4 font-poppins user-select-text">
+        <motion.div variants={itemVariants} className="bg-white/90 border border-black/20 p-8 rounded-lg mb-12 shadow-lg">
+          <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
             Featured Case Study: E-commerce Transformation
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h4 className="text-lg font-bold text-oritech-red mb-2 font-poppins user-select-text">
+              <h4 className="text-lg font-bold text-black mb-2 font-poppins user-select-text">
                 The Challenge
               </h4>
-              <p className="text-gray-300 mb-4 font-poppins user-select-text">
+              <p className="text-black mb-4 font-poppins user-select-text">
                 A growing e-commerce platform was struggling with manual order processing, customer service bottlenecks, and inventory management issues that were limiting their growth potential.
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-bold text-oritech-red mb-2 font-poppins user-select-text">
+              <h4 className="text-lg font-bold text-black mb-2 font-poppins user-select-text">
                 The Results
               </h4>
-              <ul className="text-gray-300 space-y-1 font-poppins user-select-text">
+              <ul className="text-black space-y-1 font-poppins user-select-text">
                 <li>• 300% faster order processing</li>
                 <li>• 45% reduction in operational costs</li>
                 <li>• 80% of customer inquiries automated</li>
@@ -176,7 +176,7 @@ const Testimonials = () => {
         <motion.div variants={itemVariants} className="text-center">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-oritech-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

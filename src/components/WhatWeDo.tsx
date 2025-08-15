@@ -73,7 +73,7 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section id="what-we-do" className="section-padding bg-oritech-gray/10">
+    <section id="what-we-do" className="section-padding bg-black/10">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -81,10 +81,10 @@ const WhatWeDo = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
             What We Do
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-poppins user-select-text">
+          <p className="text-xl text-black max-w-3xl mx-auto font-poppins user-select-text">
             We provide comprehensive AI consulting services to help businesses identify, plan, and implement automation solutions that drive real results.
           </p>
         </motion.div>
@@ -94,19 +94,19 @@ const WhatWeDo = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-oritech-gray/30 backdrop-blur-sm p-8 rounded-lg border border-oritech-gray/50 hover:bg-oritech-gray/40 transition-all duration-300 hover:transform hover:scale-105"
+              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 hover:transform hover:scale-105 shadow-lg"
             >
-              <div className="mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-4 font-poppins user-select-text">
+              <div className="mb-6 text-black">{service.icon}</div>
+              <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
                 {service.title}
               </h3>
-              <p className="text-gray-300 mb-6 font-poppins user-select-text">
+              <p className="text-black mb-6 font-poppins user-select-text">
                 {service.description}
               </p>
               <ul className="space-y-2">
                 {service.benefits.map((benefit, benefitIndex) => (
-                  <li key={benefitIndex} className="flex items-start text-gray-300 font-poppins user-select-text">
-                    <ArrowRight className="h-4 w-4 text-oritech-red mt-1 mr-2 flex-shrink-0" />
+                  <li key={benefitIndex} className="flex items-start text-black font-poppins user-select-text">
+                    <ArrowRight className="h-4 w-4 text-black mt-1 mr-2 flex-shrink-0" />
                     {benefit}
                   </li>
                 ))}
@@ -118,7 +118,7 @@ const WhatWeDo = () => {
         <motion.div variants={itemVariants} className="text-center">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-oritech-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

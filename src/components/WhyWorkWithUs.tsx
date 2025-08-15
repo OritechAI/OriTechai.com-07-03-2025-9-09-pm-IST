@@ -75,10 +75,10 @@ const WhyWorkWithUs = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
             Why Work With Us
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-poppins user-select-text">
+          <p className="text-xl text-black max-w-3xl mx-auto font-poppins user-select-text">
             We're not just consultants—we're your strategic partners in AI transformation, committed to delivering real, measurable results.
           </p>
         </motion.div>
@@ -87,10 +87,10 @@ const WhyWorkWithUs = () => {
         <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-oritech-red mb-2 font-poppins user-select-text">
+              <div className="text-4xl md:text-5xl font-bold text-black mb-2 font-poppins user-select-text">
                 {stat.number}
               </div>
-              <div className="text-gray-300 font-poppins user-select-text">
+              <div className="text-black font-poppins user-select-text">
                 {stat.label}
               </div>
             </div>
@@ -103,13 +103,13 @@ const WhyWorkWithUs = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-oritech-gray/30 backdrop-blur-sm p-8 rounded-lg border border-oritech-gray/50 hover:bg-oritech-gray/40 transition-all duration-300"
+              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 shadow-lg"
             >
-              <div className="mb-6">{reason.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-4 font-poppins user-select-text">
+              <div className="mb-6 text-black">{reason.icon}</div>
+              <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
                 {reason.title}
               </h3>
-              <p className="text-gray-300 font-poppins user-select-text">
+              <p className="text-black font-poppins user-select-text">
                 {reason.description}
               </p>
             </motion.div>
@@ -117,14 +117,14 @@ const WhyWorkWithUs = () => {
         </div>
 
         {/* Client Success Story */}
-        <motion.div variants={itemVariants} className="bg-oritech-red/10 border border-oritech-red/30 p-8 rounded-lg mb-12">
-          <h3 className="text-2xl font-bold text-white mb-4 font-poppins user-select-text">
+        <motion.div variants={itemVariants} className="bg-white/90 border border-black/20 p-8 rounded-lg mb-12 shadow-lg">
+          <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
             Client Success Story
           </h3>
-          <p className="text-gray-300 mb-4 font-poppins user-select-text italic">
+          <p className="text-black mb-4 font-poppins user-select-text italic">
             "OritechAI transformed our customer service operations. We went from 8-hour response times to instant AI-powered responses, reducing support costs by 45% while improving customer satisfaction scores by 60%. The ROI was evident within the first month."
           </p>
-          <p className="text-oritech-red font-semibold font-poppins user-select-text">
+          <p className="text-black font-semibold font-poppins user-select-text">
             — Sarah Johnson, CEO of TechFlow Solutions
           </p>
         </motion.div>
@@ -132,7 +132,7 @@ const WhyWorkWithUs = () => {
         <motion.div variants={itemVariants} className="text-center">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-oritech-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

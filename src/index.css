@@ -54,13 +54,96 @@
 }
 
 body {
-  @apply bg-oritech-bg text-white font-poppins font-light;
+  @apply bg-gradient-to-br from-oritech-red/90 via-oritech-red/80 to-oritech-red/70 text-black font-poppins font-light;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   user-select: text;
   /* Add top padding to prevent content from being covered by the fixed header */
   padding-top: 80px;
+}
+
+/* Override all text colors to black */
+h1, h2, h3, h4, h5, h6, p, span, div, li, a {
+  color: #000000 !important;
+}
+
+/* Override specific text colors that need to stay visible */
+.text-white {
+  color: #000000 !important;
+}
+
+.text-gray-300, .text-gray-400 {
+  color: #333333 !important;
+}
+
+.text-oritech-red {
+  color: #8b0000 !important; /* Darker red for better contrast */
+}
+
+/* Button styles */
+.bg-oritech-red {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.hover\:bg-red-700:hover,
+.hover\:bg-oritech-red\/90:hover {
+  background-color: #333333 !important;
+}
+
+/* Card backgrounds */
+.bg-oritech-gray\/30,
+.bg-oritech-gray\/40 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Header background */
+.bg-\[#1a1a1a\]\/80 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Footer background */
+.bg-oritech-bg {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Footer text should be white */
+#footer * {
+  color: #ffffff !important;
+}
+
+/* Navigation menu content */
+.navigation-menu-content {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Input fields */
+.contact-input,
+.bg-oritech-gray {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #000000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Placeholder text */
+::placeholder {
+  color: #666666 !important;
+}
+
+/* Focus states */
+.focus\:ring-oritech-red:focus {
+  --tw-ring-color: #000000 !important;
+}
+
+/* Border colors */
+.border-oritech-gray\/50,
+.border-oritech-gray\/20 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .user-select-text {
