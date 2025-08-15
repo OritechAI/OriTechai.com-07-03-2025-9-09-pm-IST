@@ -17,70 +17,6 @@ class ComponentErrorBoundary extends React.Component {
     super(props);
     this.state = { hasError: false };
   }
-
-  static getDerivedStateFromError(error) {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error, info) {
-    console.error("Component error:", error, info);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="p-4 my-4 bg-oritech-gray/30 border border-oritech-red/30 rounded-lg text-white">
-          <h3 className="text-lg font-semibold text-oritech-red mb-2">Something went wrong</h3>
-          <p className="text-sm text-gray-300 mb-4">We're having trouble loading this component</p>
-          <button 
-            onClick={() => this.setState({ hasError: false })}
-            className="text-sm bg-oritech-red/80 hover:bg-oritech-red text-white px-4 py-2 rounded"
-          >
-            Try again
-          </button>
-        </div>
-      );
-    }
-
-    return this.props.children;
-  }
-}
-
-function App() {
-  const [showAnimation, setShowAnimation] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-  const [contentReady, setContentReady] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [headerReady, setHeaderReady] = useState(false);
-  const [skipAnimation, setSkipAnimation] = useState(false);
-  const [videoError, setVideoError] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
   useEffect(() => {
     // Check if user has visited before and when
     const checkVisitStatus = () => {
@@ -116,20 +52,20 @@ function App() {
     checkVisitStatus();
     
     if (!skipAnimation) {
-      // Make header visible at 7.5 seconds
+      // Make header visible at 3 seconds (faster since no spline loading)
       const headerTimer = setTimeout(() => {
         setHeaderReady(true);
-      }, 7500);
-
-      // Prepare content after animation starts
-      const prepareContentTimer = setTimeout(() => {
-        setContentReady(true);
       }, 3000);
 
-      // Show main content after 7.5 seconds
+      // Prepare content immediately
+      const prepareContentTimer = setTimeout(() => {
+        setContentReady(true);
+      }, 1000);
+
+      // Show main content after 3 seconds
       const contentTimer = setTimeout(() => {
         setShowContent(true);
-      }, 7500);
+      }, 3000);
 
       return () => {
         clearTimeout(headerTimer);
@@ -141,6 +77,12 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Background Video */}
+      {!videoError && (
+        <video
+          ref={videoRef}
+
+      {/* Semi-transparent overlay for readability */}
       {/* Background Video */}
       {!videoError && (
         <video
@@ -175,15 +117,6 @@ function App() {
       {/* Fallback background if video fails */}
       {videoError && (
         <div className="video-fallback"></div>
-      )}
-
-      {/* Header loads first, separate from other content for better performance */}
-      {headerReady && (
-        <div className="relative z-30">
-          <ComponentErrorBoundary>
-            <Header activeSection={activeSection} />
-          </ComponentErrorBoundary>
-        </div>
       )}
 
       {contentReady && (
