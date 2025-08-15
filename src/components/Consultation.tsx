@@ -79,9 +79,9 @@ const Consultation = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-8 user-select-text">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-poppins">Book a Free consultation</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-poppins">Book Your Free AI Consultation</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto font-poppins">
-            Ready to transform your business with AI automation? Schedule a consultation with our sales reps.
+            Ready to discover how AI can transform your business? Schedule a free consultation with our AI experts to discuss your specific needs and get a custom roadmap for implementation.
           </p>
         </motion.div>
         

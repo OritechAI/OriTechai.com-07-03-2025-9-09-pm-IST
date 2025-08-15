@@ -124,28 +124,34 @@ function Footerdemo() {
             <h3 className="mb-4 text-lg font-semibold font-poppins">Quick Links</h3>
             <nav className="space-y-2 text-sm">
               <button 
-                onClick={() => scrollToSection('about')} 
+                onClick={() => scrollToSection('home')} 
                 className="block transition-colors hover:text-oritech-red w-full text-left text-gray-300 font-poppins font-light"
               >
                 Home
               </button>
               <button 
-                onClick={() => scrollToSection('services')} 
+                onClick={() => scrollToSection('what-we-do')} 
                 className="block transition-colors hover:text-oritech-red w-full text-left text-gray-300 font-poppins font-light"
               >
-                Services
+                What We Do
               </button>
               <button 
-                onClick={() => scrollToSection('vision')} 
+                onClick={() => scrollToSection('our-process')} 
                 className="block transition-colors hover:text-oritech-red w-full text-left text-gray-300 font-poppins font-light"
               >
-                Our Vision
+                Our Process
+              </button>
+              <button 
+                onClick={() => scrollToSection('testimonials')} 
+                className="block transition-colors hover:text-oritech-red w-full text-left text-gray-300 font-poppins font-light"
+              >
+                Testimonials
               </button>
               <button 
                 onClick={() => scrollToSection('consultation')} 
                 className="block transition-colors hover:text-oritech-red w-full text-left text-gray-300 font-poppins font-light"
               >
-                Consultation
+                Book Consultation
               </button>
             </nav>
           </div>

@@ -1,4 +1,4 @@
-import { Book, Menu, Sunset, Trees, Zap, Home, Wrench, Users, MessageSquare, Eye } from "lucide-react";
+import { Book, Menu, Sunset, Trees, Zap, Home, Briefcase, Users, MessageSquare, CheckCircle, Star } from "lucide-react";
 import React from 'react';
 
 import {
@@ -70,18 +70,18 @@ const Navbar1 = ({
     title: "OriTech",
   },
   menu = [
-    { title: "Home", url: "/", icon: <Home className="h-5 w-5" />, sectionId: "about" },
-    { title: "Services", url: "/services", icon: <Wrench className="h-5 w-5" />, sectionId: "services" },
-    { title: "Our Vision", url: "/vision", icon: <Eye className="h-5 w-5" />, sectionId: "vision" },
-    { title: "Contact Us", url: "/footer", icon: <MessageSquare className="h-5 w-5" />, sectionId: "footer" }
+    { title: "Home", url: "/", icon: <Home className="h-5 w-5" />, sectionId: "home" },
+    { title: "What We Do", url: "/what-we-do", icon: <Briefcase className="h-5 w-5" />, sectionId: "what-we-do" },
+    { title: "Our Process", url: "/our-process", icon: <CheckCircle className="h-5 w-5" />, sectionId: "our-process" },
+    { title: "Testimonials", url: "/testimonials", icon: <Star className="h-5 w-5" />, sectionId: "testimonials" }
   ],
   mobileExtraLinks = [
-    { name: "Home", url: "/", sectionId: "about" },
-    { name: "Services", url: "/services", sectionId: "services" },
-    { name: "Vision", url: "/vision", sectionId: "vision" },
+    { name: "Home", url: "/", sectionId: "home" },
+    { name: "What We Do", url: "/what-we-do", sectionId: "what-we-do" },
+    { name: "Our Process", url: "/our-process", sectionId: "our-process" },
   ],
   auth = {
-    login: { text: "Log in", url: "#about", sectionId: "about" },
+    login: { text: "Why Choose Us", url: "#why-work-with-us", sectionId: "why-work-with-us" },
     signup: { text: "Book a call", url: "#consultation", sectionId: "consultation" },
   },
   activeSection,
@@ -107,7 +107,7 @@ const Navbar1 = ({
       <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
-            <a href="#about" onClick={(e) => { e.preventDefault(); handleItemClick('/', 'about'); }} className="flex items-center gap-2">
+            <a href="#home" onClick={(e) => { e.preventDefault(); handleItemClick('/', 'home'); }} className="flex items-center gap-2">
               <img src={logo.src} className="w-8 h-8 rounded-full" alt={logo.alt} />
               <span className="text-lg font-semibold text-oritech-red">{logo.title}</span>
             </a>
@@ -164,8 +164,8 @@ const Navbar1 = ({
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a 
-              href="#about" 
-              onClick={(e) => { e.preventDefault(); handleItemClick('/', 'about'); }}
+              href="#home" 
+              onClick={(e) => { e.preventDefault(); handleItemClick('/', 'home'); }}
               className="flex items-center gap-2"
             >
               <img src={logo.src} className="w-8 h-8 rounded-full" alt={logo.alt} />
@@ -181,8 +181,8 @@ const Navbar1 = ({
                 <SheetHeader>
                   <SheetTitle>
                     <a 
-                      href="#about" 
-                      onClick={(e) => { e.preventDefault(); handleItemClick('/', 'about'); }}
+                      href="#home" 
+                      onClick={(e) => { e.preventDefault(); handleItemClick('/', 'home'); }}
                       className="flex items-center gap-2"
                     >
                       <img src={logo.src} className="w-8 h-8 rounded-full" alt={logo.alt} />

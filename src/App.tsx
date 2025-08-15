@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bot, Zap, MessageSquare, Database, Code2, Users, ArrowRight } from 'lucide-react';
 import Header from './components/Header';
-import Services from './components/Services';
+import Hero from './components/Hero';
+import WhatWeDo from './components/WhatWeDo';
+import WhyWorkWithUs from './components/WhyWorkWithUs';
+import OurProcess from './components/OurProcess';
+import Testimonials from './components/Testimonials';
 import Consultation from './components/Consultation';
 import Footer from './components/Footer';
-import About from './components/About';
-import Vision from './components/Vision';
 import SplineBackground from './components/SplineBackground';
 import VoiceGlowWidget from './components/VoiceGlowWidget';
 
@@ -280,29 +281,42 @@ function App() {
             animate={showContent ? "visible" : "hidden"}
           >            
             <main>
-              {/* About component first */}
+              {/* Hero Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <About />
+                  <Hero />
                 </ComponentErrorBoundary>
               </motion.div>
 
-              {/* Reduced spacing between About and Services */}
-              <motion.div 
-                variants={itemVariants} 
-                className="mt-[-2rem]" // Reduced top margin to bring services closer to hero
-              >
-                <ComponentErrorBoundary>
-                  <Services />
-                </ComponentErrorBoundary>
-              </motion.div>
-              
+              {/* What We Do Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <Vision />
+                  <WhatWeDo />
                 </ComponentErrorBoundary>
               </motion.div>
               
+              {/* Why Work With Us Section */}
+              <motion.div variants={itemVariants}>
+                <ComponentErrorBoundary>
+                  <WhyWorkWithUs />
+                </ComponentErrorBoundary>
+              </motion.div>
+              
+              {/* Our Process Section */}
+              <motion.div variants={itemVariants}>
+                <ComponentErrorBoundary>
+                  <OurProcess />
+                </ComponentErrorBoundary>
+              </motion.div>
+
+              {/* Testimonials Section */}
+              <motion.div variants={itemVariants}>
+                <ComponentErrorBoundary>
+                  <Testimonials />
+                </ComponentErrorBoundary>
+              </motion.div>
+              
+              {/* Consultation Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
                   <Consultation />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Home, Wrench, Users, MessageSquare, Eye } from 'lucide-react';
+import { Home, Briefcase, Users, MessageSquare, CheckCircle, Star } from 'lucide-react';
 import { Navbar1 } from '@/components/blocks/shadcnblocks-com-navbar1';
 
 interface HeaderProps {
@@ -12,25 +12,25 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   const [mounted, setMounted] = useState(false);
 
   const navItems = [
-    { title: 'Home', url: '/', icon: <Home className="h-5 w-5" />, sectionId: 'about' },
-    { title: 'Services', url: '/services', icon: <Wrench className="h-5 w-5" />, sectionId: 'services' },
-    { title: 'Our Vision', url: '/vision', icon: <Eye className="h-5 w-5" />, sectionId: 'vision' },
-    { title: 'Contact Us', url: '/footer', icon: <MessageSquare className="h-5 w-5" />, sectionId: 'footer' }
+    { title: 'Home', url: '/', icon: <Home className="h-5 w-5" />, sectionId: 'home' },
+    { title: 'What We Do', url: '/what-we-do', icon: <Briefcase className="h-5 w-5" />, sectionId: 'what-we-do' },
+    { title: 'Our Process', url: '/our-process', icon: <CheckCircle className="h-5 w-5" />, sectionId: 'our-process' },
+    { title: 'Testimonials', url: '/testimonials', icon: <Star className="h-5 w-5" />, sectionId: 'testimonials' }
   ];
 
   const mobileExtraLinks = [
-    { name: "Home", url: "/", sectionId: "about" },
-    { name: "Services", url: "/services", sectionId: "services" },
-    { name: "Vision", url: "/vision", sectionId: "vision" },
+    { name: "Home", url: "/", sectionId: "home" },
+    { name: "What We Do", url: "/what-we-do", sectionId: "what-we-do" },
+    { name: "Our Process", url: "/our-process", sectionId: "our-process" },
   ];
 
   const authOptions = {
-    login: { text: "Our Vision", url: "#vision", sectionId: "vision" },
+    login: { text: "Why Choose Us", url: "#why-work-with-us", sectionId: "why-work-with-us" },
     signup: { text: "Book a call", url: "#consultation", sectionId: "consultation" },
   };
 
   const logo = {
-    url: "#about",
+    url: "#home",
     src: "/images/oritech.png",
     alt: "OriTech Logo",
     title: "OriTech",
