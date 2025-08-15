@@ -140,6 +140,7 @@ function App() {
                 <li><a href="#why-us" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('why-us'); }}>Why Us</a></li>
                 <li><a href="#process" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('process'); }}>Process</a></li>
                 <li><a href="#proof" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('proof'); }}>Results</a></li>
+                <li><a href="#booking" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('booking'); }}>Book Now</a></li>
               </ul>
               
               <button 
@@ -187,6 +188,9 @@ function App() {
                 <li style={{ marginBottom: '1rem' }}>
                   <a href="#proof" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('proof'); }}>Results</a>
                 </li>
+                <li style={{ marginBottom: '1rem' }}>
+                  <a href="#booking" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('booking'); }}>Book Now</a>
+                </li>
                 <li>
                   <a 
                     href="#booking" 
@@ -194,7 +198,7 @@ function App() {
                     onClick={(e) => { e.preventDefault(); scrollToSection('booking'); }}
                   >
                     Book Free Audit
-                  </a>
+                    Book Now
                 </li>
               </ul>
             </nav>
@@ -492,10 +496,9 @@ function App() {
               viewport={{ once: true }}
             >
               <div className="booking-section">
-                <h2 className="mb-3">Book Your Free AI Audit Call</h2>
+                <h2 className="mb-3">Book Your Free 30-Minute AI Audit Call</h2>
                 <p style={{ fontSize: '1.2rem', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
-                  In just 30 minutes, we'll analyze your biggest automation opportunities and show you 
-                  exactly how AI can save your business time and money.
+                  Schedule your free AI audit call to discover how AI can save time, cut costs, and boost your business.
                 </p>
                 
                 <div style={{ marginBottom: '2rem' }}>
@@ -505,36 +508,42 @@ function App() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                     <CheckCircle size={24} color="var(--gold-accent)" style={{ marginRight: '0.5rem' }} />
-                    <span>Get a custom AI implementation roadmap</span>
+                    <span>Receive cost & time savings estimates</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <CheckCircle size={24} color="var(--gold-accent)" style={{ marginRight: '0.5rem' }} />
-                    <span>Receive cost & time savings estimates</span>
+                    <span>Get a custom AI implementation roadmap</span>
                   </div>
                 </div>
                 
-                {/* Booking Form/Calendar Placeholder */}
                 {/* Calendly Booking Widget */}
                 <div style={{ 
-                  background: 'rgba(255, 255, 255, 0.1)', 
-                  borderRadius: '8px', 
+                  background: 'rgba(0, 0, 0, 0.8)', 
+                  borderRadius: '12px', 
                   padding: '2rem',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)'
+                  backdropFilter: 'blur(15px)',
+                  border: '2px solid rgba(226, 30, 38, 0.3)',
+                  boxShadow: '0 8px 32px rgba(226, 30, 38, 0.2)'
                 }}>
-                  {/* Replace 'your-calendly-username/your-event' with your actual Calendly link */}
-                  <div 
-                    className="calendly-inline-widget" 
-                    data-url="https://calendly.com/selenica3/30min" 
-                    style={{ minWidth: '320px', height: '700px' }}
-                  ></div>
+                  {/* Calendly Iframe Embed */}
+                  <iframe 
+                    src="https://calendly.com/selenica3/30min?embed_domain=localhost&embed_type=Inline" 
+                    width="100%" 
+                    height="700" 
+                    frameBorder="0" 
+                    title="Schedule a meeting"
+                    style={{
+                      borderRadius: '8px',
+                      backgroundColor: 'white'
+                    }}
+                  ></iframe>
                   
                   {/* Fallback contact options */}
                   <div style={{ marginTop: '2rem', textAlign: 'center' }}>
                     <p style={{ marginBottom: '1rem', color: 'rgba(255, 255, 255, 0.8)' }}>
                       Can't see the calendar? Contact us directly:
                     </p>
-                    <a href="mailto:info@oritechai.com" className="btn btn-primary" style={{ marginRight: '1rem' }}>
+                    <a href="mailto:info@oritechai.com" className="btn btn-gold" style={{ marginRight: '1rem' }}>
                       <Mail size={20} style={{ marginRight: '0.5rem' }} />
                       Email Us
                     </a>

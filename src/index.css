@@ -388,13 +388,25 @@ p {
 
 /* Booking Section */
 .booking-section {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 12px;
   padding: 3rem 2rem;
   text-align: center;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(226, 30, 38, 0.4);
+  box-shadow: 0 8px 32px rgba(226, 30, 38, 0.3);
   color: var(--pure-white);
+}
+
+/* Responsive Calendly iframe */
+@media (max-width: 768px) {
+  .booking-section iframe {
+    height: 600px;
+  }
+  
+  .booking-section {
+    padding: 2rem 1rem;
+  }
 }
 
 /* Footer */
