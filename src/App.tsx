@@ -250,7 +250,7 @@ function App() {
                   While you're manually processing data, scheduling meetings, and managing workflows, 
                   your competitors are automating their way to higher profits and faster growth.
                 </p>
-                <p style={{ fontSize: '1.2rem', color: 'var(--gold-accent)', fontWeight: '600' }}>
+                <p style={{ fontSize: '1.2rem', color: 'var(--pure-white)', fontWeight: '600' }}>
                   But here's the good news: We can identify exactly where you're losing money and show you how to fix it.
                 </p>
                 <div className="mt-4">
