@@ -147,12 +147,6 @@ function Footerdemo() {
               >
                 Consultation
               </button>
-              <button 
-                onClick={() => scrollToSection('team')} 
-                className="block transition-colors hover:text-oritech-red w-full text-left text-gray-300 font-poppins font-light"
-              >
-                Team
-              </button>
             </nav>
           </div>
           <div className="user-select-text">

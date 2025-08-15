@@ -15,7 +15,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     { title: 'Home', url: '/', icon: <Home className="h-5 w-5" />, sectionId: 'about' },
     { title: 'Services', url: '/services', icon: <Wrench className="h-5 w-5" />, sectionId: 'services' },
     { title: 'Our Vision', url: '/vision', icon: <Eye className="h-5 w-5" />, sectionId: 'vision' },
-    { title: 'Team', url: '/team', icon: <Users className="h-5 w-5" />, sectionId: 'team' },
     { title: 'Contact Us', url: '/footer', icon: <MessageSquare className="h-5 w-5" />, sectionId: 'footer' }
   ];
 
@@ -23,7 +22,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     { name: "Home", url: "/", sectionId: "about" },
     { name: "Services", url: "/services", sectionId: "services" },
     { name: "Vision", url: "/vision", sectionId: "vision" },
-    { name: "Team", url: "/team", sectionId: "team" },
   ];
 
   const authOptions = {

@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Zap, MessageSquare, Database, Code2, Users, ArrowRight } from 'lucide-react';
 import Header from './components/Header';
 import Services from './components/Services';
-import Team from './components/Team';
 import Consultation from './components/Consultation';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -307,12 +306,6 @@ function App() {
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
                   <Consultation />
-                </ComponentErrorBoundary>
-              </motion.div>
-              
-              <motion.div variants={itemVariants}>
-                <ComponentErrorBoundary>
-                  <Team />
                 </ComponentErrorBoundary>
               </motion.div>
             </main>
