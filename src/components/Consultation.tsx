@@ -3,18 +3,28 @@ import { motion } from 'framer-motion';
 import CalendarBooking from './CalendarBooking';
 import { CheckCircle } from 'lucide-react';
 
+// Error boundary state interface
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+// Error boundary props interface
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+}
+
 // Simple error boundary component for Consultation
-class ErrorBoundary extends Component {
-  constructor(props) {
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: any) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: any) {
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: any, info: any) {
     console.error("Calendar error:", error, info);
   }
 

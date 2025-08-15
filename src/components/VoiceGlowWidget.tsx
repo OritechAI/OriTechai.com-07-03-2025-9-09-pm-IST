@@ -78,8 +78,8 @@ const VoiceGlowWidget: React.FC = () => {
       }
       
       // Clean up any global objects that were created
-      if (window.VG_CONFIG !== undefined) {
-        delete window.VG_CONFIG;
+      if ('VG_CONFIG' in window) {
+        delete (window as any).VG_CONFIG;
       }
       
       initialized.current = false;

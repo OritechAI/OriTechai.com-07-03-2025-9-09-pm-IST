@@ -1,5 +1,12 @@
 import { useEffect } from 'react';
 
+// Global type declaration for Calendly
+declare global {
+  interface Window {
+    Calendly?: any;
+  }
+}
+
 const CalendarBooking = () => {
   useEffect(() => {
     // Load Calendly script if not already loaded
