@@ -212,7 +212,10 @@ class ComponentErrorBoundary extends React.Component {
       <ComponentErrorBoundary>
         <VoiceGlowWidget />
       </ComponentErrorBoundary>
+    )
+    }
     </div>
+  )
   );
 }
 
