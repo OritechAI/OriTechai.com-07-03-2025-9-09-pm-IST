@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   return (
     <motion.div 
       className={`fixed left-0 right-0 z-[10000] transition-all duration-300 ${
-        scrolled ? 'bg-white/95 shadow-lg backdrop-blur-md border-b border-black/20' : 'bg-white/95'
+        scrolled ? 'header-light shadow-lg backdrop-blur-md border-b border-gray-200' : 'header-light'
       }`}
       initial="hidden"
       animate={mounted ? "visible" : "hidden"}

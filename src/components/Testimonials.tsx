@@ -37,7 +37,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-black/10">
+    <section id="testimonials" className="section-padding bg-gray-50 text-black">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -45,36 +45,36 @@ const Testimonials = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-poppins user-select-text">
             Real Businesses. Real Results.
           </h2>
         </motion.div>
 
         {/* Case Study */}
-        <motion.div variants={itemVariants} className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 shadow-lg mb-12 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-black mb-6 font-poppins user-select-text text-center">
+        <motion.div variants={itemVariants} className="card-light p-8 rounded-lg shadow-lg mb-12 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold mb-6 font-poppins user-select-text text-center">
             Case Study: Service Business Transformation
           </h3>
-          <p className="text-lg text-black mb-6 font-poppins user-select-text leading-relaxed text-center">
-            A 12-person service business cut manual admin hours by 30% and increased lead conversion by 18% after implementing our AI audit recommendations.
+          <p className="text-lg mb-6 font-poppins user-select-text leading-relaxed text-center">
+            A 12-person service business cut manual admin hours by <span className="metric-positive">30%</span> and increased lead conversion by <span className="metric-positive">18%</span> after implementing our AI audit recommendations.
           </p>
           
           {/* Results Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="bg-black/10 p-4 rounded-lg border border-black/20 text-center">
-              <div className="text-3xl font-bold text-black mb-2 font-poppins user-select-text">30%</div>
-              <p className="text-black font-poppins user-select-text">Reduction in Manual Hours</p>
+            <div className="bg-white p-4 rounded-lg border border-gray-200 text-center shadow">
+              <div className="text-3xl font-bold metric-positive mb-2 font-poppins user-select-text">30%</div>
+              <p className="font-poppins user-select-text">Reduction in Manual Hours</p>
             </div>
-            <div className="bg-black/10 p-4 rounded-lg border border-black/20 text-center">
-              <div className="text-3xl font-bold text-black mb-2 font-poppins user-select-text">18%</div>
-              <p className="text-black font-poppins user-select-text">Increase in Lead Conversion</p>
+            <div className="bg-white p-4 rounded-lg border border-gray-200 text-center shadow">
+              <div className="text-3xl font-bold metric-positive mb-2 font-poppins user-select-text">18%</div>
+              <p className="font-poppins user-select-text">Increase in Lead Conversion</p>
             </div>
           </div>
         </motion.div>
 
         {/* Testimonial */}
-        <motion.div variants={itemVariants} className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 shadow-lg max-w-4xl mx-auto mb-12">
-          <Quote className="h-8 w-8 text-black mb-4 mx-auto" />
+        <motion.div variants={itemVariants} className="card-light p-8 rounded-lg hover:shadow-xl transition-all duration-300 shadow-lg max-w-4xl mx-auto mb-12">
+          <Quote className="h-8 w-8 icon-red mb-4 mx-auto" />
           
           {/* Star Rating */}
           <div className="flex justify-center mb-4">
@@ -83,13 +83,13 @@ const Testimonials = () => {
             ))}
           </div>
 
-          <p className="text-xl text-black mb-6 font-poppins user-select-text italic text-center leading-relaxed">
+          <p className="text-xl mb-6 font-poppins user-select-text italic text-center leading-relaxed">
             "OritechAI showed us exactly where we were losing time and money. The automation plan paid for itself in weeks."
           </p>
 
           {/* Author Info */}
           <div className="text-center">
-            <p className="text-black font-bold font-poppins user-select-text">
+            <p className="font-bold font-poppins user-select-text">
               COO, B2B Agency
             </p>
           </div>
@@ -98,7 +98,7 @@ const Testimonials = () => {
         <motion.div variants={itemVariants} className="text-center">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="btn-primary font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

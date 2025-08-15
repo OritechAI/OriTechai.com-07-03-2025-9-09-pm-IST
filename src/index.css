@@ -54,96 +54,166 @@
 }
 
 body {
-  @apply bg-gradient-to-br from-oritech-red/90 via-oritech-red/80 to-oritech-red/70 text-black font-poppins font-light;
+  @apply bg-black text-white font-poppins font-light;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   user-select: text;
-  /* Add top padding to prevent content from being covered by the fixed header */
   padding-top: 80px;
 }
 
-/* Override all text colors to black */
-h1, h2, h3, h4, h5, h6, p, span, div, li, a {
-  color: #000000 !important;
+/* Color scheme variables */
+:root {
+  --primary-red: #E41E26;
+  --gold-accent: #FFD700;
+  --light-gray: #F2F2F2;
+  --off-white: #F8F8F8;
+  --success-green: #10B981;
 }
 
-/* Override specific text colors that need to stay visible */
-.text-white {
-  color: #000000 !important;
+/* Primary CTA Button */
+.btn-primary {
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
 }
 
-.text-gray-300, .text-gray-400 {
-  color: #333333 !important;
+.btn-primary:hover {
+  background-color: var(--gold-accent);
+  color: black;
 }
 
-.text-oritech-red {
-  color: #8b0000 !important; /* Darker red for better contrast */
+/* Secondary CTA Button */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-red);
+  border: 2px solid var(--primary-red);
+  transition: all 0.3s ease;
 }
 
-/* Button styles */
-.bg-oritech-red {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+.btn-secondary:hover {
+  background-color: var(--primary-red);
+  color: white;
 }
 
-.hover\:bg-red-700:hover,
-.hover\:bg-oritech-red\/90:hover {
-  background-color: #333333 !important;
+/* Light section styles */
+.section-light {
+  background-color: var(--off-white);
+  color: #000000;
 }
 
-/* Card backgrounds */
-.bg-oritech-gray\/30,
-.bg-oritech-gray\/40 {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+/* Dark section styles */
+.section-dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Emphasis colors */
+.text-red-emphasis {
+  color: var(--primary-red);
+}
+
+.text-gold-emphasis {
+  color: var(--gold-accent);
+}
+
+.text-success {
+  color: var(--success-green);
+}
+
+/* Card styles */
+.card-light {
+  background-color: white;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Header background */
-.bg-\[#1a1a1a\]\/80 {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+/* Header styles */
+.header-light {
+  background-color: rgba(248, 248, 248, 0.95);
+  color: #000000;
   backdrop-filter: blur(8px);
 }
 
-/* Footer background */
-.bg-oritech-bg {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+/* Section dividers */
+.section-divider {
+  background-color: var(--primary-red);
+  height: 4px;
+  width: 100%;
+  margin: 2rem 0;
 }
 
-/* Footer text should be white */
-#footer * {
-  color: #ffffff !important;
+/* Icon styling */
+.icon-red {
+  color: var(--primary-red);
 }
 
-/* Navigation menu content */
-.navigation-menu-content {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(8px);
+.icon-gold {
+  color: var(--gold-accent);
 }
 
-/* Input fields */
-.contact-input,
-.bg-oritech-gray {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  color: #000000 !important;
-  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+/* Remove old background styles */
+.fixed-header {
+  background-color: var(--off-white);
+  color: #000000;
 }
 
-/* Placeholder text */
-::placeholder {
-  color: #666666 !important;
+/* Input styling */
+.input-light {
+  background-color: white;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* Focus states */
-.focus\:ring-oritech-red:focus {
-  --tw-ring-color: #000000 !important;
+.input-dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Border colors */
-.border-oritech-gray\/50,
-.border-oritech-gray\/20 {
-  border-color: rgba(0, 0, 0, 0.1) !important;
+/* Remove old gradient background */
+.hero-section {
+  background-color: #000000;
+}
+
+.hero-section::before,
+.hero-wave {
+  display: none;
+}
+
+/* Footer should stay dark */
+.footer-dark {
+  background-color: #000000;
+  color: white;
+}
+
+.footer-dark * {
+  color: white;
+}
+
+/* Remove background pattern */
+.bg-pattern {
+  display: none;
+}
+
+/* Metrics styling */
+.metric-positive {
+  color: var(--success-green);
+  font-weight: bold;
+}
+
+.metric-highlight {
+  color: var(--gold-accent);
+  font-weight: bold;
 }
 
 .user-select-text {

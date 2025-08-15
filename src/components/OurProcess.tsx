@@ -39,32 +39,32 @@ const OurProcess = () => {
   const processSteps = [
     {
       step: "01",
-      icon: <Search className="h-16 w-16 text-black" />,
+      icon: <Search className="h-16 w-16 icon-red" />,
       title: "Audit",
       description: "Deep dive into your business processes."
     },
     {
       step: "02",
-      icon: <FileText className="h-16 w-16 text-black" />,
+      icon: <FileText className="h-16 w-16 icon-red" />,
       title: "Plan",
       description: "Clear, prioritized AI strategy tailored to you."
     },
     {
       step: "03",
-      icon: <Cog className="h-16 w-16 text-black" />,
+      icon: <Cog className="h-16 w-16 icon-red" />,
       title: "Implement",
       description: "We set up and integrate your automations."
     },
     {
       step: "04",
-      icon: <TrendingUp className="h-16 w-16 text-black" />,
+      icon: <TrendingUp className="h-16 w-16 icon-red" />,
       title: "Optimize",
       description: "We track results and keep improving."
     }
   ];
 
   return (
-    <section id="our-process" className="section-padding">
+    <section id="our-process" className="section-padding bg-black text-white">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -72,7 +72,7 @@ const OurProcess = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-poppins user-select-text">
             Simple, Fast, and Built for ROI
           </h2>
         </motion.div>
@@ -82,25 +82,25 @@ const OurProcess = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 text-center shadow-lg"
+              className="card-dark p-8 rounded-lg hover:bg-white/20 transition-all duration-300 text-center shadow-lg"
             >
               {/* Step Number */}
-              <div className="text-4xl font-bold text-black/30 mb-4 font-poppins user-select-text">
+              <div className="text-4xl font-bold text-gold-emphasis mb-4 font-poppins user-select-text">
                 {step.step}
               </div>
               
               {/* Icon */}
-              <div className="mb-6 flex justify-center text-black">
+              <div className="mb-6 flex justify-center">
                 {step.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
+              <h3 className="text-2xl font-bold text-white mb-4 font-poppins user-select-text">
                 {step.title}
               </h3>
               
               {/* Description */}
-              <p className="text-black text-lg font-poppins user-select-text leading-relaxed">
+              <p className="text-gray-300 text-lg font-poppins user-select-text leading-relaxed">
                 {step.description}
               </p>
             </motion.div>
@@ -110,7 +110,7 @@ const OurProcess = () => {
         <motion.div variants={itemVariants} className="text-center">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="btn-primary font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -78,7 +78,7 @@ const Consultation = () => {
   ];
 
   return (
-    <section id="consultation" className="section-padding relative">
+    <section id="consultation" className="section-padding relative bg-black text-white">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -86,10 +86,10 @@ const Consultation = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-12 user-select-text">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-poppins">
             Your Free AI Audit Call is One Click Away
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto font-poppins mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-poppins mb-8">
             In this no-obligation call, we'll:
           </p>
           
@@ -97,8 +97,8 @@ const Consultation = () => {
           <div className="max-w-2xl mx-auto mb-8">
             <ul className="space-y-4">
               {callBenefits.map((benefit, index) => (
-                <li key={index} className="flex items-center justify-center text-lg text-black font-poppins user-select-text">
-                  <CheckCircle className="h-6 w-6 text-black mr-3 flex-shrink-0" />
+                <li key={index} className="flex items-center justify-center text-lg text-white font-poppins user-select-text">
+                  <CheckCircle className="h-6 w-6 icon-red mr-3 flex-shrink-0" />
                   {benefit}
                 </li>
               ))}
@@ -108,7 +108,7 @@ const Consultation = () => {
         
         {/* Calendar Component with error boundary */}
         <motion.div variants={itemVariants} className="mb-12 relative z-20">
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 shadow-lg" style={{ height: "750px" }}>
+          <div className="card-dark p-6 rounded-lg shadow-lg" style={{ height: "750px" }}>
             <ErrorBoundary>
               <CalendarBooking />
             </ErrorBoundary>
@@ -117,7 +117,7 @@ const Consultation = () => {
 
         {/* Final CTA */}
         <motion.div variants={itemVariants} className="text-center">
-          <p className="text-lg text-black font-poppins user-select-text font-semibold">
+          <p className="text-lg text-gold-emphasis font-poppins user-select-text font-semibold">
             Ready to transform your business with AI? Book your call now!
           </p>
         </motion.div>

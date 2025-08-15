@@ -38,24 +38,24 @@ const WhyWorkWithUs = () => {
 
   const reasons = [
     {
-      icon: <TrendingUp className="h-12 w-12 text-black" />,
+      icon: <TrendingUp className="h-12 w-12 icon-red" />,
       title: "Proven Results",
       description: "Clients see cost reductions of up to 30% in the first 90 days."
     },
     {
-      icon: <Users className="h-12 w-12 text-black" />,
+      icon: <Users className="h-12 w-12 icon-red" />,
       title: "Industry Experience",
       description: "We've worked with service businesses, agencies, retail, and more."
     },
     {
-      icon: <Shield className="h-12 w-12 text-black" />,
+      icon: <Shield className="h-12 w-12 icon-red" />,
       title: "End-to-End Support",
       description: "From audit to deployment, we stay until your AI is delivering measurable ROI."
     }
   ];
 
   return (
-    <section id="why-work-with-us" className="section-padding bg-black/10">
+    <section id="why-work-with-us" className="section-padding bg-gray-50 text-black">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -63,7 +63,7 @@ const WhyWorkWithUs = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-poppins user-select-text">
             Why Businesses Choose Us
           </h2>
         </motion.div>
@@ -74,13 +74,13 @@ const WhyWorkWithUs = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 text-center shadow-lg"
+              className="card-light p-8 rounded-lg hover:shadow-xl transition-all duration-300 text-center shadow-lg"
             >
-              <div className="mb-6 flex justify-center text-black">{reason.icon}</div>
-              <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
+              <div className="mb-6 flex justify-center">{reason.icon}</div>
+              <h3 className="text-2xl font-bold mb-4 font-poppins user-select-text">
                 {reason.title}
               </h3>
-              <p className="text-black text-lg font-poppins user-select-text leading-relaxed">
+              <p className="text-lg font-poppins user-select-text leading-relaxed">
                 {reason.description}
               </p>
             </motion.div>
@@ -90,7 +90,7 @@ const WhyWorkWithUs = () => {
         <motion.div variants={itemVariants} className="text-center">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="btn-primary font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

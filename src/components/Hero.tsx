@@ -37,7 +37,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="section-padding relative overflow-hidden" style={{ marginTop: "10vh" }}>
+    <section id="home" className="section-padding relative overflow-hidden bg-black text-white" style={{ marginTop: "10vh" }}>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -46,10 +46,10 @@ const Hero = () => {
         className="text-center"
       >
         <motion.div variants={itemVariants} className="mb-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mb-6 font-poppins user-select-text leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-poppins user-select-text leading-tight">
             AI Consulting & Audits to Transform Your Business
           </h1>
-          <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto font-poppins user-select-text leading-relaxed mb-8">
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto font-poppins user-select-text leading-relaxed mb-8" style={{ color: '#F2F2F2' }}>
             We help businesses audit their processes, uncover automation opportunities, and implement AI strategies that cut costs, boost efficiency, and drive revenue.
           </p>
         </motion.div>
@@ -57,7 +57,7 @@ const Hero = () => {
         <motion.div variants={itemVariants} className="mb-6">
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-poppins"
+            className="btn-primary font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -66,7 +66,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mb-16">
-          <p className="text-lg text-black max-w-2xl mx-auto font-poppins user-select-text italic">
+          <p className="text-lg max-w-2xl mx-auto font-poppins user-select-text italic" style={{ color: '#F2F2F2' }}>
             In just 30 minutes, we'll map your biggest AI wins — no fluff, no jargon, just actionable insights.
           </p>
         </motion.div>

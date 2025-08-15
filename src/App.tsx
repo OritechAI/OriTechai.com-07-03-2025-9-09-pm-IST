@@ -161,9 +161,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-oritech-red/90 via-oritech-red/80 to-oritech-red/70">
-      {/* Red gradient background with subtle pattern */}
-      <div className="fixed inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%2720%27%20viewBox%3D%270%200%2020%2020%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%271%27%20height%3D%271%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.05%27%2F%3E%3C%2Fsvg%3E')] opacity-30 pointer-events-none"></div>
+    <div className="min-h-screen bg-black">
 
       {/* Header loads first, separate from other content for better performance */}
       {headerReady && (
@@ -191,56 +189,72 @@ function App() {
               {/* Hero Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <Hero />
+                  <div className="section-dark">
+                    <Hero />
+                  </div>
                 </ComponentErrorBoundary>
               </motion.div>
 
               {/* Problem Statement Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <ProblemStatement />
+                  <div className="section-light">
+                    <ProblemStatement />
+                  </div>
                 </ComponentErrorBoundary>
               </motion.div>
 
               {/* What We Do Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <WhatWeDo />
+                  <div className="section-dark">
+                    <WhatWeDo />
+                  </div>
                 </ComponentErrorBoundary>
               </motion.div>
               
               {/* Why Work With Us Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <WhyWorkWithUs />
+                  <div className="section-light">
+                    <WhyWorkWithUs />
+                  </div>
                 </ComponentErrorBoundary>
               </motion.div>
               
               {/* Our Process Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <OurProcess />
+                  <div className="section-dark">
+                    <OurProcess />
+                  </div>
                 </ComponentErrorBoundary>
               </motion.div>
 
               {/* Testimonials Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <Testimonials />
+                  <div className="section-light">
+                    <Testimonials />
+                  </div>
                 </ComponentErrorBoundary>
               </motion.div>
               
               {/* Consultation Section */}
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
-                  <Consultation />
+                  <div className="section-dark">
+                    <Consultation />
+                  </div>
                 </ComponentErrorBoundary>
               </motion.div>
             </main>
             
             <motion.div variants={itemVariants}>
               <ComponentErrorBoundary>
-                <Footer />
+                <div className="footer-dark">
+                  <Footer />
+                </div>
               </ComponentErrorBoundary>
             </motion.div>
           </motion.div>

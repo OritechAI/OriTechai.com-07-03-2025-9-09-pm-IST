@@ -27,7 +27,7 @@ const ProblemStatement = () => {
   };
 
   return (
-    <section id="problem-statement" className="section-padding bg-black/10">
+    <section id="problem-statement" className="section-padding bg-gray-50 text-black">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -40,13 +40,13 @@ const ProblemStatement = () => {
           </h2>
           
           <div className="max-w-4xl mx-auto space-y-6">
-            <p className="text-xl text-black font-poppins user-select-text leading-relaxed">
+            <p className="text-xl font-poppins user-select-text leading-relaxed">
               Most companies are sitting on hidden inefficiencies that eat up hours, burn budgets, and frustrate teams.
             </p>
-            <p className="text-xl text-black font-poppins user-select-text leading-relaxed">
+            <p className="text-xl font-poppins user-select-text leading-relaxed">
               AI can fix that, but only if you know where to start and what to automate.
             </p>
-            <p className="text-xl text-black font-poppins user-select-text leading-relaxed font-semibold">
+            <p className="text-xl font-poppins user-select-text leading-relaxed font-semibold text-red-emphasis">
               That's where we come in.
             </p>
           </div>
@@ -54,22 +54,22 @@ const ProblemStatement = () => {
 
         {/* Visual representation of problems */}
         <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 text-center shadow-lg">
-            <Clock className="h-12 w-12 text-black mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-black mb-2 font-poppins user-select-text">Wasting Time</h3>
-            <p className="text-black font-poppins user-select-text">Manual tasks eating up hours that could be spent growing your business</p>
+          <div className="card-light p-6 rounded-lg text-center shadow-lg">
+            <Clock className="h-12 w-12 icon-red mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2 font-poppins user-select-text">Wasting Time</h3>
+            <p className="font-poppins user-select-text">Manual tasks eating up hours that could be spent growing your business</p>
           </div>
           
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 text-center shadow-lg">
-            <DollarSign className="h-12 w-12 text-black mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-black mb-2 font-poppins user-select-text">Burning Money</h3>
-            <p className="text-black font-poppins user-select-text">Hidden inefficiencies draining your budget without delivering value</p>
+          <div className="card-light p-6 rounded-lg text-center shadow-lg">
+            <DollarSign className="h-12 w-12 icon-red mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2 font-poppins user-select-text">Burning Money</h3>
+            <p className="font-poppins user-select-text">Hidden inefficiencies draining your budget without delivering value</p>
           </div>
           
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-black/10 text-center shadow-lg">
-            <AlertTriangle className="h-12 w-12 text-black mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-black mb-2 font-poppins user-select-text">Missing Opportunities</h3>
-            <p className="text-black font-poppins user-select-text">Competitors gaining advantage while you're stuck with outdated processes</p>
+          <div className="card-light p-6 rounded-lg text-center shadow-lg">
+            <AlertTriangle className="h-12 w-12 icon-red mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2 font-poppins user-select-text">Missing Opportunities</h3>
+            <p className="font-poppins user-select-text">Competitors gaining advantage while you're stuck with outdated processes</p>
           </div>
         </motion.div>
       </motion.div>

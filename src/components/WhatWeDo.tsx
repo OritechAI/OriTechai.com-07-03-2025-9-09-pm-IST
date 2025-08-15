@@ -38,24 +38,24 @@ const WhatWeDo = () => {
 
   const services = [
     {
-      icon: <Search className="h-12 w-12 text-black" />,
+      icon: <Search className="h-12 w-12 icon-red" />,
       title: "AI Process Audits",
       description: "We analyze your current operations to find the exact tasks and workflows AI can handle for you."
     },
     {
-      icon: <PlaneTakeoff className="h-12 w-12 text-black" />,
+      icon: <PlaneTakeoff className="h-12 w-12 icon-red" />,
       title: "AI Strategy Consulting",
       description: "We create a custom roadmap to implement AI solutions that fit your business — not cookie-cutter templates."
     },
     {
-      icon: <Cog className="h-12 w-12 text-black" />,
+      icon: <Cog className="h-12 w-12 icon-red" />,
       title: "AI Implementation & Training",
       description: "We build, integrate, and train your team so your automations actually get used (and make money)."
     }
   ];
 
   return (
-    <section id="what-we-do" className="section-padding">
+    <section id="what-we-do" className="section-padding bg-black text-white">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -63,7 +63,7 @@ const WhatWeDo = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 font-poppins user-select-text">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-poppins user-select-text">
             AI Consulting & Audits That Deliver Real ROI
           </h2>
         </motion.div>
@@ -73,13 +73,13 @@ const WhatWeDo = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white/90 backdrop-blur-sm p-8 rounded-lg border border-black/10 hover:bg-white/95 transition-all duration-300 hover:transform hover:scale-105 shadow-lg"
+              className="card-dark p-8 rounded-lg hover:bg-white/20 transition-all duration-300 hover:transform hover:scale-105 shadow-lg"
             >
-              <div className="mb-6 text-black">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-black mb-4 font-poppins user-select-text">
+              <div className="mb-6">{service.icon}</div>
+              <h3 className="text-2xl font-bold text-white mb-4 font-poppins user-select-text">
                 {service.title}
               </h3>
-              <p className="text-black text-lg font-poppins user-select-text leading-relaxed">
+              <p className="text-gray-300 text-lg font-poppins user-select-text leading-relaxed">
                 {service.description}
               </p>
             </motion.div>
@@ -87,12 +87,12 @@ const WhatWeDo = () => {
         </div>
 
         <motion.div variants={itemVariants} className="text-center">
-          <p className="text-xl text-black mb-6 font-poppins user-select-text font-semibold">
+          <p className="text-xl text-gold-emphasis mb-6 font-poppins user-select-text font-semibold">
             Stop guessing. Start automating.
           </p>
           <motion.button
             onClick={scrollToConsultation}
-            className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
+            className="btn-primary font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-poppins"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
