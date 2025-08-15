@@ -418,19 +418,19 @@ function App() {
                 
                 <div className="metrics">
                   <div className="metric">
-                    <div className="metric-number">30%</div>
+                    <div className="metric-number" style={{ color: 'var(--albanian-red)' }}>30%</div>
                     <div className="metric-label">Cost Reduction</div>
                   </div>
                   <div className="metric">
-                    <div className="metric-number">18%</div>
+                    <div className="metric-number" style={{ color: 'var(--albanian-red)' }}>18%</div>
                     <div className="metric-label">Revenue Increase</div>
                   </div>
                   <div className="metric">
-                    <div className="metric-number">20h</div>
+                    <div className="metric-number" style={{ color: 'var(--albanian-red)' }}>20h</div>
                     <div className="metric-label">Time Saved/Week</div>
                   </div>
                   <div className="metric">
-                    <div className="metric-number">90</div>
+                    <div className="metric-number" style={{ color: 'var(--albanian-red)' }}>90 Days</div>
                     <div className="metric-label">Days to ROI</div>
                   </div>
                 </div>
