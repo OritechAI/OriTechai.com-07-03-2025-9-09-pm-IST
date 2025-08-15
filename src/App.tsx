@@ -525,7 +525,7 @@ function App() {
                   {/* Replace 'your-calendly-username/your-event' with your actual Calendly link */}
                   <div 
                     className="calendly-inline-widget" 
-                    data-url="https://calendly.com/your-calendly-username/your-event" 
+                    data-url="https://calendly.com/selenica3/30min" 
                     style={{ minWidth: '320px', height: '700px' }}
                   ></div>
                   
