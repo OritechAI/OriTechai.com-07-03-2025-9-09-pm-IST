@@ -36,7 +36,7 @@ class ComponentErrorBoundary extends React.Component {
             onClick={() => this.setState({ hasError: false })}
             className="text-sm bg-oritech-red/80 hover:bg-oritech-red text-white px-4 py-2 rounded"
           >
-        <div className="relative z-30">
+            Try Again
           </button>
         </div>
       );
@@ -55,10 +55,31 @@ function App() {
   const [skipAnimation, setSkipAnimation] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
 
   useEffect(() => {
     // Check if user has visited before and when
@@ -110,6 +131,15 @@ function App() {
         setShowContent(true);
       }, 7500);
 
+      return () => {
+        clearTimeout(headerTimer);
+        clearTimeout(prepareContentTimer);
+        clearTimeout(contentTimer);
+      };
+    }
+  }, [skipAnimation]);
+
+  return (
     <div className="min-h-screen bg-black">
 
       {/* Fixed Video Background */}
@@ -203,58 +233,32 @@ function App() {
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
                   <section className="content-section">
-                <section className="content-section">
-                  <Hero />
-                </section>
+                    <OurProcess />
                   </section>
                 </ComponentErrorBoundary>
-              {/* Problem Statement Section */}
-              <motion.div variants={itemVariants}>
-                <section className="content-section content-section-light">
-                  <ProblemStatement />
-                </section>
-                    <Testimonials />
-
-              {/* What We Do Section */}
-              <motion.div variants={itemVariants}>
-                <section className="content-section">
-                  <WhatWeDo />
-                </section>
               </motion.div>
-              
-              {/* Why Work With Us Section */}
-                </ComponentErrorBoundary>
-                <section className="content-section content-section-light">
-                  <WhyWorkWithUs />
-                </section>
-              
-              {/* Consultation Section */}
-              {/* Our Process Section */}
-              <motion.div variants={itemVariants}>
-                <section className="content-section">
-                  <OurProcess />
-                </section>
-                  <section className="content-section">
 
               {/* Testimonials Section */}
               <motion.div variants={itemVariants}>
-                <section className="content-section content-section-light">
-                  <Testimonials />
-                </section>
+                <ComponentErrorBoundary>
+                  <section className="content-section content-section-light">
+                    <Testimonials />
+                  </section>
+                </ComponentErrorBoundary>
               </motion.div>
               
               {/* Consultation Section */}
+              <motion.div variants={itemVariants}>
+                <ComponentErrorBoundary>
+                  <section className="content-section">
+                    <Consultation />
                   </section>
-                <section className="content-section">
-                  <Consultation />
-                </section>
+                </ComponentErrorBoundary>
               </motion.div>
             </main>
             
             <motion.div variants={itemVariants}>
-              <footer className="content-section">
-                <Footer />
-              </footer>
+              <ComponentErrorBoundary>
                 <footer className="content-section">
                   <Footer />
                 </footer>
