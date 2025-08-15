@@ -11,7 +11,7 @@ export default function VideoBackground() {
         loop
         playsInline
         poster="/video-fallback.jpg"
-        aria-label="AI technology background video"
+        aria-label="AI consulting and automation technology background"
       >
         <source src="/Robot Website.mp4" type="video/mp4" />
         {/* Fallback image for browsers that don't support video */}
