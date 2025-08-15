@@ -37,41 +37,20 @@ class ComponentErrorBoundary extends React.Component {
 
 function App() {
   // Animation states
-  const [skipAnimation, setSkipAnimation] = useState(false);
-  const [headerReady, setHeaderReady] = useState(false);
-  const [contentReady, setContentReady] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(true);
   const [showContent, setShowContent] = useState(false);
+  const [contentReady, setContentReady] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [headerReady, setHeaderReady] = useState(false);
+  const [skipAnimation, setSkipAnimation] = useState(false);
   
-  // Video states (single declarations)
+  // Video states (single declarations - fixed duplicates)
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   
   // Refs
   const videoRef = useRef(null);
   const contentRef = useRef(null);
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
 
   // Check visit status and handle animation timing
   useEffect(() => {
@@ -106,20 +85,20 @@ function App() {
     checkVisitStatus();
     
     if (!skipAnimation) {
-      // Make header visible at 3 seconds
+      // Make header visible at 6 seconds
       const headerTimer = setTimeout(() => {
         setHeaderReady(true);
-      }, 3000);
+      }, 6000);
 
-      // Prepare content immediately
+      // Prepare content after animation starts
       const prepareContentTimer = setTimeout(() => {
         setContentReady(true);
-      }, 1000);
+      }, 3000);
 
-      // Show main content after 3 seconds
+      // Show main content after 6 seconds
       const contentTimer = setTimeout(() => {
         setShowContent(true);
-      }, 3000);
+      }, 6000);
 
       return () => {
         clearTimeout(headerTimer);
@@ -128,6 +107,29 @@ function App() {
       };
     }
   }, [skipAnimation]);
+
+  // Scroll handling for active section
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!contentRef.current) return;
+      
+      const scrollPosition = window.scrollY;
+      const sections = document.querySelectorAll('section[id]');
+      
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop - 100;
+        const sectionHeight = (section as HTMLElement).offsetHeight;
+        const sectionId = section.getAttribute('id') || '';
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(sectionId);
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [showContent]);
 
   // Video event handlers
   const handleVideoError = () => {
@@ -149,8 +151,33 @@ function App() {
     }
   };
 
+  // Animation variants for content sections
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen">
       {/* Background Video */}
       {!videoError && (
         <video
@@ -178,31 +205,20 @@ function App() {
         <div className="video-fallback"></div>
       )}
 
-      {/* Header */}
-      <AnimatePresence>
-        {headerReady && (
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.8 }}
-            className="relative z-30"
-          >
-            <ComponentErrorBoundary>
-              <Header />
-            </ComponentErrorBoundary>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Header loads first, separate from other content for better performance */}
+      {headerReady && (
+        <div className="relative z-20 content-container">
+          <Header activeSection={activeSection} />
+        </div>
+      )}
 
-      {/* Main Content */}
       {contentReady && (
         <motion.div
           ref={contentRef}
           initial={{ opacity: 0 }}
           animate={showContent ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-20"
+          className="relative z-20 content-container"
         >
           <motion.div
             variants={containerVariants}
