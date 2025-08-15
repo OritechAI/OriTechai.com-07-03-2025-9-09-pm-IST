@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Home, Briefcase, Users, MessageSquare, CheckCircle, Star } from 'lucide-react';
-import { Navbar1 } from '@/components/blocks/shadcnblocks-com-navbar1';
+import { Navbar1 } from './blocks/shadcnblocks-com-navbar1';
 
 interface HeaderProps {
   activeSection: string;

@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 import { motion } from 'framer-motion';
-import CalendarBooking from '@/components/CalendarBooking';
+import CalendarBooking from './CalendarBooking';
 import { CheckCircle } from 'lucide-react';
 
 // Simple error boundary component for Consultation
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };

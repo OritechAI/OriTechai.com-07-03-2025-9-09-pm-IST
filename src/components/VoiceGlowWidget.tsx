@@ -1,22 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-
-declare global {
-  interface Window {
-    VG_CONFIG?: {
-      ID: string;
-      region: string;
-      render: string;
-      stylesheets: string[];
-      user?: {
-        name?: string;
-        email?: string;
-        phone?: string;
-      };
-      userID?: string;
-      autostart?: boolean;
-    };
-  }
-}
+import { useEffect, useRef } from 'react';
 
 const VoiceGlowWidget: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -96,7 +78,7 @@ const VoiceGlowWidget: React.FC = () => {
       }
       
       // Clean up any global objects that were created
-      if (window.VG_CONFIG) {
+      if (window.VG_CONFIG !== undefined) {
         delete window.VG_CONFIG;
       }
       

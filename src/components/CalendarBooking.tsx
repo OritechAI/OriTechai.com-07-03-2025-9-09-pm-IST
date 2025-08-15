@@ -1,87 +1,79 @@
-import React, { useEffect, useState } from 'react';
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from 'react';
 
 const CalendarBooking = () => {
-  const [calLoaded, setCalLoaded] = useState(false);
-  const [calError, setCalError] = useState(false);
-
   useEffect(() => {
-    // Error handler for Cal.com script
-    const handleCalError = (error: ErrorEvent) => {
-      if (error.message?.includes('Cal') || error.message === 'Script error.') {
-        console.error('Error with Cal.com widget:', error);
-        setCalError(true);
-        // Prevent error propagation
-        error.preventDefault();
-      }
-    };
-
-    window.addEventListener('error', handleCalError);
-
-    const initializeCal = async () => {
-      try {
-        const cal = await getCalApi();
-        cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-        setCalLoaded(true);
-      } catch (error) {
-        console.error('Failed to initialize Cal.com:', error);
-        setCalError(true);
-      }
-    };
-
-    initializeCal();
-
-    return () => {
-      window.removeEventListener('error', handleCalError);
-    };
+    // Load Calendly script if not already loaded
+    if (!document.getElementById('calendly-script')) {
+      const script = document.createElement('script');
+      script.id = 'calendly-script';
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.head.appendChild(script);
+      
+      return () => {
+        const existingScript = document.getElementById('calendly-script');
+        if (existingScript) {
+          existingScript.remove();
+        }
+      };
+    }
   }, []);
 
-  // Fallback UI if Cal.com fails to load
-  if (calError) {
-    return (
-      <div className="flex flex-col items-center justify-center h-full p-8 text-center">
-        <h3 className="text-xl font-bold text-white mb-4">Booking Calendar</h3>
-        <p className="text-gray-300 mb-6">
-          Our booking calendar is currently experiencing issues. Please contact us directly to schedule a consultation.
-        </p>
-        <div className="bg-oritech-gray/50 p-4 rounded-lg w-full max-w-md">
-          <p className="text-oritech-red font-semibold mb-2">Contact Information:</p>
-          <p className="text-white">Email: info@oritechai.com</p>
-          <p className="text-white">Phone: +1 (407) 406-9101</p>
-        </div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    // Initialize Calendly widget after script loads
+    const initCalendly = () => {
+      if (window.Calendly) {
+        window.Calendly.initInlineWidget({
+          url: 'https://calendly.com/selenica3/30min',
+          parentElement: document.getElementById('calendly-inline-widget'),
+          prefill: {},
+          utm: {}
+        });
+      }
+    };
+
+    // Check if Calendly is already loaded
+    if (window.Calendly) {
+      initCalendly();
+    } else {
+      // Wait for script to load
+      const checkCalendly = setInterval(() => {
+        if (window.Calendly) {
+          clearInterval(checkCalendly);
+          initCalendly();
+        }
+      }, 100);
+      
+      // Cleanup interval after 10 seconds
+      setTimeout(() => clearInterval(checkCalendly), 10000);
+      
+      return () => {
+        clearInterval(checkCalendly);
+      }
+    }
+  }, []);
 
   return (
     <div className="calendar-container h-full w-full">
-      {!calLoaded && (
-        <div className="flex items-center justify-center h-full">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-oritech-red"></div>
-        </div>
-      )}
-      <Cal 
-        calLink="oritech-ai/discovery-call"
-        style={{
-          width:"100%", 
-          height:"700px", 
-          overflow:"hidden",
-          visibility: calLoaded ? 'visible' : 'hidden'
-        }}
-        config={{
-          layout: "month_view",
-          hideEventTypeDetails: false,
-          theme: "dark",
-          styles: {
-            branding: {
-              brandColor: "#ce0005"
-            },
-            background: "transparent",
-            elementBackground: "#2a2a2a",
-            textColor: "#ffffff"
-          }
-        }}
+      <div
+        id="calendly-inline-widget"
+        className="calendly-inline-widget"
+        data-url="https://calendly.com/selenica3/30min"
+        style={{ minHeight: '700px', width: '100%' }}
       />
+      
+      {/* Fallback link */}
+      <div className="text-center mt-4">
+        <p className="text-white mb-2">Having trouble with the calendar?</p>
+        <a
+          href="https://calendly.com/selenica3/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-oritech-red hover:underline"
+        >
+          Open Calendly in new window →
+        </a>
+      </div>
     </div>
   );
 };
