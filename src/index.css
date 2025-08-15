@@ -244,32 +244,35 @@ p {
 
 /* Cards */
 .card {
-  background: var(--card-dark);
+  background: linear-gradient(135deg, var(--albanian-red) 0%, #c01419 100%);
   border-radius: 12px;
   padding: 2rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(226, 30, 38, 0.2);
+  border: 2px solid var(--albanian-red);
+  box-shadow: 0 4px 15px rgba(226, 30, 38, 0.4);
   transition: all 0.3s ease;
+  color: var(--pure-white);
 }
 
 .card:hover {
   transform: translateY(-5px);
   border-color: var(--albanian-red);
-  box-shadow: 0 10px 30px rgba(226, 30, 38, 0.3);
+  box-shadow: 0 10px 30px rgba(226, 30, 38, 0.6);
 }
 
 .card-light {
-  background: var(--card-light);
-  color: var(--pure-black);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--albanian-red) 0%, #c01419 100%);
+  color: var(--pure-white);
+  border: 2px solid var(--albanian-red);
+  box-shadow: 0 4px 15px rgba(226, 30, 38, 0.4);
 }
 
 .card-light h3 {
-  color: var(--pure-black);
+  color: var(--pure-white);
 }
 
 .card-light p {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--pure-white);
 }
 
 /* Grid Layout */
@@ -327,11 +330,13 @@ p {
 
 /* Testimonials */
 .testimonial {
-  background: var(--card-dark);
+  background: linear-gradient(135deg, var(--albanian-red) 0%, #c01419 100%);
   border-radius: 12px;
   padding: 2rem;
-  border-left: 4px solid var(--albanian-red);
+  border: 2px solid var(--albanian-red);
+  box-shadow: 0 4px 15px rgba(226, 30, 38, 0.4);
   margin-bottom: 2rem;
+  color: var(--pure-white);
 }
 
 .testimonial-quote {
@@ -348,11 +353,13 @@ p {
 
 /* Case Study */
 .case-study {
-  background: linear-gradient(135deg, var(--card-dark) 0%, rgba(226, 30, 38, 0.1) 100%);
+  background: linear-gradient(135deg, var(--albanian-red) 0%, #c01419 100%);
   border-radius: 12px;
   padding: 3rem 2rem;
   text-align: center;
-  border: 1px solid var(--albanian-red);
+  border: 2px solid var(--albanian-red);
+  box-shadow: 0 4px 15px rgba(226, 30, 38, 0.4);
+  color: var(--pure-white);
 }
 
 .metrics {
@@ -381,11 +388,13 @@ p {
 
 /* Booking Section */
 .booking-section {
-  background: var(--card-dark);
+  background: linear-gradient(135deg, var(--albanian-red) 0%, #c01419 100%);
   border-radius: 12px;
   padding: 3rem 2rem;
   text-align: center;
   border: 2px solid var(--albanian-red);
+  box-shadow: 0 4px 15px rgba(226, 30, 38, 0.4);
+  color: var(--pure-white);
 }
 
 /* Footer */
