@@ -17,6 +17,57 @@ class ComponentErrorBoundary extends React.Component {
     super(props);
     this.state = { hasError: false };
   }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('Component error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div>Something went wrong.</div>;
+    }
+
+    return this.props.children;
+  }
+}
+
+function App() {
+  const [skipAnimation, setSkipAnimation] = useState(false);
+  const [headerReady, setHeaderReady] = useState(false);
+  const [contentReady, setContentReady] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  
+  const videoRef = useRef(null);
+  const contentRef = useRef(null);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
   useEffect(() => {
     // Check if user has visited before and when
     const checkVisitStatus = () => {
@@ -81,12 +132,6 @@ class ComponentErrorBoundary extends React.Component {
       {!videoError && (
         <video
           ref={videoRef}
-
-      {/* Semi-transparent overlay for readability */}
-      {/* Background Video */}
-      {!videoError && (
-        <video
-          ref={videoRef}
           className="video-background"
           autoPlay
           muted
@@ -118,6 +163,23 @@ class ComponentErrorBoundary extends React.Component {
       {videoError && (
         <div className="video-fallback"></div>
       )}
+
+      {/* Header */}
+      <AnimatePresence>
+        {headerReady && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-30"
+          >
+            <ComponentErrorBoundary>
+              <Header />
+            </ComponentErrorBoundary>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {contentReady && (
         <motion.div
@@ -212,10 +274,7 @@ class ComponentErrorBoundary extends React.Component {
       <ComponentErrorBoundary>
         <VoiceGlowWidget />
       </ComponentErrorBoundary>
-    )
-    }
     </div>
-  )
   );
 }
 
