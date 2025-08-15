@@ -70,29 +70,6 @@ const Hero = () => {
             In just 30 minutes, we'll map your biggest AI wins — no fluff, no jargon, just actionable insights.
           </p>
         </motion.div>
-
-        {/* Trust Indicators */}
-        <motion.div variants={itemVariants} className="text-center">
-          <p className="text-black mb-6 font-poppins user-select-text font-semibold">Trusted by businesses worldwide</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <img src="https://1min.ai/_next/image?url=https%3A%2F%2Fblog1minai.wordpress.com%2Fwp-content%2Fuploads%2F2024%2F08%2F1minai-ai-chat-with-gpt-4o-illustration.jpg&w=1920&q=75" 
-                 alt="GPT-4o AI Technology Partner" 
-                 className="h-8 w-auto object-contain hover:opacity-100 transition-opacity"
-                 loading="lazy" />
-            <img src="https://workveu.com/images/Make.png" 
-                 alt="Make Automation Platform Partner" 
-                 className="h-8 w-auto object-contain hover:opacity-100 transition-opacity"
-                 loading="lazy" />
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVwOzVey6XcMevohRDman3xgDFw91v8qZfw&s" 
-                 alt="Voiceflow AI Platform Partner" 
-                 className="h-8 w-auto object-contain hover:opacity-100 transition-opacity"
-                 loading="lazy" />
-            <img src="https://images.seeklogo.com/logo-png/47/1/n8n-logo-png_seeklogo-470809.png" 
-                 alt="n8n Workflow Automation Partner" 
-                 className="h-8 w-auto object-contain hover:opacity-100 transition-opacity"
-                 loading="lazy" />
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );
