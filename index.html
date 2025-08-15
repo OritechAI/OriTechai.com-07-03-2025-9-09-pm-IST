@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OritechAI — AI Consulting & Business Audits for Efficiency & Growth</title>
-    <meta name="description" content="We provide AI consulting and business audits to help companies cut costs, automate workflows, and unlock growth. Book your free AI consultation today.">
+    <meta name="description" content="AI consulting and business audits to cut costs, automate workflows, and grow revenue. Book your free AI consultation today.">
     <meta name="keywords" content="AI consulting, AI business audit, AI automation audit, AI strategy consulting, AI implementation, business automation, AI transformation">
     <meta name="author" content="OritechAI">
-    <meta property="og:title" content="OritechAI — AI Consulting & Business Audits for Efficiency & Growth">
-    <meta property="og:description" content="We provide AI consulting and business audits to help companies cut costs, automate workflows, and unlock growth. Book your free AI consultation today.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="OritechAI — AI Consulting & Business Audits">
+    <meta property="og:description" content="AI consulting and business audits to cut costs, automate workflows, and grow revenue. Book your free AI consultation today.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://oritechai.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OritechAI — AI Consulting & Business Audits for Efficiency & Growth">
-    <meta name="twitter:description" content="We provide AI consulting and business audits to help companies cut costs, automate workflows, and unlock growth. Book your free AI consultation today.">
+    <meta property="og:image" content="https://oritechai.com/images/oritech-og.png">
     
-    <!-- Updated Favicon -->
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OritechAI — AI Consulting & Business Audits">
+    <meta name="twitter:description" content="AI consulting and business audits to cut costs, automate workflows, and grow revenue. Book your free AI consultation today.">
+    <meta name="twitter:image" content="https://oritechai.com/images/oritech-og.png">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/oritech.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/oritech.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/oritech.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" href="/images/oritech.png">
-    <meta name="theme-color" content="#ce0005">
+    <meta name="theme-color" content="#E41E26">
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -39,75 +44,42 @@
         "addressCountry": "Albania"
       },
       "serviceType": ["AI Consulting", "AI Business Audit", "AI Strategy Consulting", "AI Implementation"],
-      "areaServed": "Worldwide"
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Consulting Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Process Audit",
+              "description": "Comprehensive analysis of business processes to identify AI automation opportunities"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Strategy Consulting",
+              "description": "Custom AI implementation roadmap and strategy development"
+            }
+          }
+        ]
+      }
     }
     </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      /* Ensure Spline viewer receives mouse events */
-      .spline-container {
-        pointer-events: none;
-      }
-      
-      /* But allow interaction with actual content elements */
-      .content-container * {
-        pointer-events: auto;
-      }
-      
-      /* Add loading spinner for better user experience */
-      .initial-loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #1a1a1a;
-        z-index: 9999;
-      }
-      
-      .loader-spin {
-        width: 48px;
-        height: 48px;
-        border: 4px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        border-left-color: #ce0005;
-        animation: loader-spin 1s linear infinite;
-      }
-      
-      @keyframes loader-spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/Robot Website.mp4" as="video" type="video/mp4">
   </head>
   <body>
-    <div id="root">
-      <!-- Initial loading state -->
-      <div class="initial-loader">
-        <div class="loader-spin"></div>
-      </div>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Add global error handling for external scripts -->
-    <script>
-      window.addEventListener('error', function(event) {
-        // Log the error but don't display it to users
-        console.error('Global error caught:', event.message);
-        
-        // Prevent default browser error handling
-        event.preventDefault();
-        
-        // Return true to indicate the error was handled
-        return true;
-      }, true);
-    </script>
   </body>
 </html>
