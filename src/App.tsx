@@ -36,7 +36,7 @@ class ComponentErrorBoundary extends React.Component {
             onClick={() => this.setState({ hasError: false })}
             className="text-sm bg-oritech-red/80 hover:bg-oritech-red text-white px-4 py-2 rounded"
           >
-            Try again
+        <div className="relative z-30">
           </button>
         </div>
       );
@@ -55,7 +55,9 @@ function App() {
   const [skipAnimation, setSkipAnimation] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -108,62 +110,6 @@ function App() {
         setShowContent(true);
       }, 7500);
 
-      return () => {
-        clearTimeout(headerTimer);
-        clearTimeout(prepareContentTimer);
-        clearTimeout(contentTimer);
-      };
-    }
-  }, [skipAnimation]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!contentRef.current) return;
-      
-      const scrollPosition = window.scrollY;
-      const sections = document.querySelectorAll('section[id]');
-      
-      sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop - 100;
-        const sectionHeight = (section as HTMLElement).offsetHeight;
-        const sectionId = section.getAttribute('id') || '';
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(sectionId);
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [showContent]);
-
-  // Animation variants for content sections
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { 
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
-
-  return (
     <div className="min-h-screen bg-black">
 
       {/* Fixed Video Background */}
@@ -201,15 +147,6 @@ function App() {
       {/* Fallback background if video fails */}
       {videoError && (
         <div className="video-fallback"></div>
-      )}
-
-      {/* Header loads first, separate from other content for better performance */}
-      {headerReady && (
-        <div className="relative z-30">
-          <ComponentErrorBoundary>
-            <Header activeSection={activeSection} />
-          </ComponentErrorBoundary>
-        </div>
       )}
 
       {contentReady && (
@@ -266,32 +203,58 @@ function App() {
               <motion.div variants={itemVariants}>
                 <ComponentErrorBoundary>
                   <section className="content-section">
-                    <OurProcess />
+                <section className="content-section">
+                  <Hero />
+                </section>
                   </section>
                 </ComponentErrorBoundary>
+              {/* Problem Statement Section */}
+              <motion.div variants={itemVariants}>
+                <section className="content-section content-section-light">
+                  <ProblemStatement />
+                </section>
+                    <Testimonials />
+
+              {/* What We Do Section */}
+              <motion.div variants={itemVariants}>
+                <section className="content-section">
+                  <WhatWeDo />
+                </section>
               </motion.div>
+              
+              {/* Why Work With Us Section */}
+                </ComponentErrorBoundary>
+                <section className="content-section content-section-light">
+                  <WhyWorkWithUs />
+                </section>
+              
+              {/* Consultation Section */}
+              {/* Our Process Section */}
+              <motion.div variants={itemVariants}>
+                <section className="content-section">
+                  <OurProcess />
+                </section>
+                  <section className="content-section">
 
               {/* Testimonials Section */}
               <motion.div variants={itemVariants}>
-                <ComponentErrorBoundary>
-                  <section className="content-section content-section-light">
-                    <Testimonials />
-                  </section>
-                </ComponentErrorBoundary>
+                <section className="content-section content-section-light">
+                  <Testimonials />
+                </section>
               </motion.div>
               
               {/* Consultation Section */}
-              <motion.div variants={itemVariants}>
-                <ComponentErrorBoundary>
-                  <section className="content-section">
-                    <Consultation />
                   </section>
-                </ComponentErrorBoundary>
+                <section className="content-section">
+                  <Consultation />
+                </section>
               </motion.div>
             </main>
             
             <motion.div variants={itemVariants}>
-              <ComponentErrorBoundary>
+              <footer className="content-section">
+                <Footer />
+              </footer>
                 <footer className="content-section">
                   <Footer />
                 </footer>

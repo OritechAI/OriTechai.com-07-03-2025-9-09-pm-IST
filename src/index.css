@@ -116,6 +116,63 @@ body {
 
 .content-section-light * {
   color: inherit;
+  padding-top: 80px;
+  position: relative;
+}
+
+/* Full-Page Video Background Styles */
+.video-background {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Semi-transparent overlay for readability */
+.video-overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Fallback background if video fails */
+.video-fallback {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  z-index: -2;
+}
+
+/* Content sections styling */
+.content-section {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  min-height: auto;
+}
+
+.content-section-light {
+  background-color: rgba(248, 248, 248, 0.95);
+  backdrop-filter: blur(2px);
+  color: #000000;
+}
+
+.content-section-light * {
+  color: inherit;
 }
 
 /* Color scheme variables */
@@ -305,45 +362,54 @@ body {
   backface-visibility: hidden;
 }
 
-/* Hero section with red wave background */
-.hero-section {
-  background-color: #000;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(125deg, rgba(228,30,38,0.1) 0%, rgba(228,30,38,0.2) 100%);
-  z-index: 1;
-}
-
-.hero-wave {
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1000 C400,800 600,900 1000,1000 L1000,0 L0,0 Z' fill='%23E41E26' opacity='0.2'/%3E%3C/svg%3E");
-  background-size: cover;
-  z-index: 0;
-  animation: wave-animation 20s infinite alternate ease-in-out;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: scale(1) rotate(0deg);
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .fixed-header {
+    padding: 0.5rem 1rem;
   }
-  50% {
-    transform: scale(1.05) rotate(1deg);
+  
+  body {
+    padding-top: 70px;
   }
-  100% {
-    transform: scale(1) rotate(0deg);
+  
+  /* Ensure video covers mobile screens properly */
+  .video-background {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-position: center center;
+  }
+  
+  /* Adjust overlay opacity for mobile readability */
+  .video-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Video loading states */
+.video-background:not([data-loaded="true"]) {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.video-background[data-loaded="true"] {
+  opacity: 1;
+}
+
+/* Enhanced touch interactions for mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .transition-all {
+    transition-duration: 0.2s;
+  }
+  
+  /* Optimize video playback on mobile */
+  .video-background {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 }
 
